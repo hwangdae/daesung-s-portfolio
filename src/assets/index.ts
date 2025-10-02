@@ -1,0 +1,15 @@
+export { default as Axios } from "./Axios.svg";
+export { default as Blog } from "./Blog.svg";
+export { default as Discord } from "./Discord.svg";
+export { default as Email } from "./Email.svg";
+export { default as Figma } from "./Figma.svg";
+export { default as Github } from "./Github.svg";
+export { default as Phone } from "./Phone.svg";
+export { default as PostgresQL } from "./PostgresQL.svg";
+export { default as ReactIcon } from "./React.svg";
+export { default as ReactQuery } from "./ReactQuery.svg";
+export { default as StyledComponents } from "./StyledComponents.svg";
+export { default as Supabase } from "./Supabase.svg";
+export { default as Typescript } from "./Typescript.svg";
+export { default as Zustand } from "./Zustand.svg";
+export { default as Wave } from "./Wave.svg";

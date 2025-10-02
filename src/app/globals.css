@@ -1,26 +1,219 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import "tailwindcss"; */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-nanum: "Nanum", sans-serif;
+  --font-maple: "maple", sans-serif;
+  --font-blackhan: "blackhan", sans-serif;
+  --font-cafe24: "cafe24", sans-serif;
+  --font-apple: "apple", sans-serif;
+  --font-pretendard: "pretendard", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* @theme {
+  --color-primary: "#2F4858";
+  --color-second: "#da9bb7";
+} */
+.noise-bg {
+  background: repeating-radial-gradient(
+    circle at random,
+    rgba(255, 255, 255, 0.05) 0,
+    rgba(0, 0, 0, 0.05) 1px
+  );
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pretendard);
+  color: #ffffff;
+  background-color: #ddd;
+}
+/* h1 {
+  font-family: var(--font-pretendard);
+  letter-spacing: -2px;
+  font-size: 64px;
+  font-weight: 900;
+}
+h2 {
+  font-size: 42px;
+}
+h3 {
+  font-size: 22px;
+}
+h4 {
+  font-size: 17px;
+}
+p {
+  font-size: 22px;
+}
+span {
+  font-size: 22px;
+} */
+
+.beforeClass {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* 히어로 */
+.hero-64-regular {
+  font-family: var(--font-blackhan);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 62px;
+  letter-spacing: 0.04em;
+}
+
+/* 타이틀 */
+.title-40-black {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+.title-40-bold {
+    font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0.02em;
+}
+
+.title-28-regular {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0%;
+}
+
+.title-26-extraLight {
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+
+.title-24-bold {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+
+.title-24-semibold {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 0%;
+  letter-spacing: 0%;
+}
+
+.title-24-medium {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 0%;
+  letter-spacing: 0%;
+}
+
+.title-24-regular {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0%;
+}
+
+.title-22-bold {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.title-22-regular {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+/* 텍스트 */
+.text-22-extraLight {
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+
+.text-22-thin {
+  font-size: 22px;
+  font-weight: 100;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+}
+
+.text-20-extraLight {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+.text-18-extraLight {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+.text-18-light {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+
+.text-16-bold {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0;
+}
+
+.text-17-extraLight {
+  font-size: 17px;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+}
+
+.text-17-thin {
+  font-size: 17px;
+  font-weight: 100;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+}
+
+.text-16-regular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0;
+}
+
+.text-16-light {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+}
+
+.text-16-extraLight {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+}
+
+.text-14-light {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  letter-spacing: -0.01em;
 }
