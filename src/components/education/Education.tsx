@@ -8,7 +8,7 @@ const Education = () => {
   return (
     <section className="w-full h-[100vh] bg-[url(/images/background2.png)]">
       <div className="max-w-[1300px] h-full mx-auto  flex justify-between items-start">
-        <div className="w-[30%] flex items-center gap-4 py-[180px]">
+        <div className="w-[30%] flex items-center gap-4 py-[12vh]">
           <div className="w-[8px] h-[46px] bg-white" />
           <h1 className="title-40-black">학습했던 과정들</h1>
         </div>
@@ -18,7 +18,7 @@ const Education = () => {
           </div> */}
           {/* 스파르타 코딩클럽 */}
           <div className="flex gap-[24px]">
-            <div className="relative top-[110px] bg-[#272727] p-[32px] max-w-[430px]">
+            <div className="relative top-[110px] bg-[#272727] px-[20px] py-[26px] max-w-[430px]">
               <div className="mb-[36px]">
                 <h1 className="title-22-bold mb-2">스파르타코딩클럽 React 과정</h1>
                 <p className="text-14-light text-[#ccc]">2023.05.15 - 2023.09.19</p>
@@ -52,7 +52,7 @@ const Education = () => {
               <div className="w-[2px] h-[100%] bg-[#888888]"></div>
               <div className="w-[11px] h-[2px] bg-[#888888] rounded-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
             </div>
-            <div className=" bg-[#272727] p-[32px] max-w-[430px]">
+            <div className=" bg-[#272727] px-[20px] py-[26px] max-w-[430px]">
               <div className="mb-[36px]">
                 <h1 className="title-22-bold mb-2">
                   UI/UX 반응형 웹디자인&웹퍼블리셔
@@ -78,7 +78,7 @@ const Education = () => {
           </div>
           {/* 학교 */}
           <div className="flex gap-[24px]">
-            <div className="relative top-[-40px] bg-[#272727] p-[32px] max-w-[430px]">
+            <div className="relative top-[-70px] bg-[#272727] px-[20px] py-[26px] max-w-[430px]">
               <div className="mb-[36px]">
                 <h1 className="title-22-bold mb-2">경복대학교</h1>
                 <p className="text-14-light text-[#ccc]">2016.02.03 - 2020.02.02</p>

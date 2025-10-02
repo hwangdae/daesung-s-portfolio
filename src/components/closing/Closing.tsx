@@ -38,21 +38,23 @@ const Closing = () => {
     >
       <div
         style={{ animationDelay: "2s" }}
-        className="max-w-[1300px] h-full mx-auto pt-[250px]"
+        className="max-w-[1300px] h-full mx-auto py-[14vh]"
       >
         <div
           className={`${
             inView
               ? "animate-fade-slide-bottom opacity-1"
               : "animate-fade-slide-top-out opacity-0"
-          } text-white`}
+          } text-white flex flex-col items-stretch justify-between`}
         >
-          <h1 className="title-40-bold mb-4">봐주셔서 감사합니다</h1>
-          <h2 className="text-18-extraLight !leading-[26px] mb-12">
-            사용자 경험과 개발자 경험 모두를 고려한 개발을 위해 노력하고,
-            <br />더 나은 UI/UX와 효율적인 코드 작성을 위해 꾸준히
-            공부하겠습니다.
-          </h2>
+          <div>
+            <h1 className="title-40-bold mb-4">봐주셔서 감사합니다</h1>
+            <h2 className="text-18-extraLight !leading-[26px] mb-12">
+              사용자 경험과 개발자 경험 모두를 고려한 개발을 위해 노력하고,
+              <br />더 나은 UI/UX와 효율적인 코드 작성을 위해 꾸준히
+              공부하겠습니다.
+            </h2>
+          </div>
           <div
             className={`${
               inView
@@ -93,8 +95,8 @@ const Closing = () => {
         } h-full border border-primaryWhite absolute right-[50px] top-0 z-50 origin-top opacity-0`}
       /> */}
       <div className="h-full w-[1px] bg-[#919191] absolute right-[300px] top-0 z-50 origin-top animate-scale-in-y"></div>
-        <div className="h-full w-[1px] bg-[#919191] absolute right-[325px] top-0 z-50 origin-top animate-scale-in-y"></div>
-        <div className="h-full w-[1px] bg-[#919191] absolute right-[350px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#919191] absolute right-[325px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#919191] absolute right-[350px] top-0 z-50 origin-top animate-scale-in-y"></div>
     </section>
   );
 };
