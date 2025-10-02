@@ -34,11 +34,11 @@ const Closing = () => {
   return (
     <section
       ref={scrollRef}
-      className="bg-[url(/images/hero-image2.png)] w-full h-[100vh] relative left-0 top-0"
+      className="bg-[url(/images/hero-image2.png)] w-full h-[100vh] relative right-0 top-0"
     >
       <div
         style={{ animationDelay: "2s" }}
-        className="max-w-[1300px] h-full mx-auto pt-[300px]"
+        className="max-w-[1300px] h-full mx-auto pt-[250px]"
       >
         <div
           className={`${
@@ -92,9 +92,9 @@ const Closing = () => {
           inView ? "animate-scale-in-y" : "animate-scale-out-y"
         } h-full border border-primaryWhite absolute right-[50px] top-0 z-50 origin-top opacity-0`}
       /> */}
-      <div className="h-full w-[1px] bg-[#919191] absolute left-[1600px] top-0 z-50 origin-top animate-scale-in-y"></div>
-      <div className="h-full w-[1px] bg-[#919191] absolute left-[1625px] top-0 z-50 origin-top animate-scale-in-y"></div>
-      <div className="h-full w-[1px] bg-[#919191] absolute left-[1650px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#919191] absolute right-[300px] top-0 z-50 origin-top animate-scale-in-y"></div>
+        <div className="h-full w-[1px] bg-[#919191] absolute right-[325px] top-0 z-50 origin-top animate-scale-in-y"></div>
+        <div className="h-full w-[1px] bg-[#919191] absolute right-[350px] top-0 z-50 origin-top animate-scale-in-y"></div>
     </section>
   );
 };

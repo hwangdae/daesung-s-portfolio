@@ -5,7 +5,7 @@ const SUBTITLES = ["사용자 경험", "신뢰감", "편의"];
 const AboutMe = () => {
   return (
     <section className="w-full h-[100vh] bg-[url(/images/background1.png)]">
-      <div className="max-w-[1300px] h-full mx-auto py-[180px] flex justify-between">
+      <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
         <div className="w-[40%]">
           <h1 className="title-40-black mb-[40px]">
             당연함을 당연하게
