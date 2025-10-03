@@ -18,7 +18,7 @@ export interface ProjectDetailType {
     description: string;
   }[];
   troubleShooting: {
-    title: string;
+    id: string;
     trouble: {
       title: string;
       content: string[];

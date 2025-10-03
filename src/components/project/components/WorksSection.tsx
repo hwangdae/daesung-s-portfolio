@@ -9,7 +9,7 @@ const WorksSection = ({ works }: PropsType) => {
     <div>
       <div className="flex items-center gap-2 py-[20px]">
         <div className="w-[10px] h-[10px] bg-white rounded-[1px]" />
-        <h1 className="title-24-bold">고민과 작업</h1>
+        <h1 className="title-24-bold">고민과 작업들</h1>
       </div>
       <ul>
         {works?.map((work) => (
@@ -17,13 +17,23 @@ const WorksSection = ({ works }: PropsType) => {
             <h1 className="text-17-bold bg-[#2b2b2b] px-3 py-2 mb-[14px]">
               {work.title}
             </h1>
-            <div className="mb-2">
-              <h2 className="underline mb-1 decoration-[#898989]">Why</h2>
-              <p className="text-17-regular text-[#eeeeee] break-keep">{work.thinking}</p>
+            <div className="mb-3">
+              <div className="flex gap-2 items-center mb-2">
+                <h2 className="text-17-bold whitespace-nowrap">Thinking About</h2>
+                <div className="w-full h-[1px] bg-[#555555]" />
+              </div>
+              <p className="text-17-regular text-[#eeeeee] break-keep">
+                {work.thinking}
+              </p>
             </div>
             <div>
-              <h2 className="underline mb-1 decoration-[#898989]">What i did?</h2>
-              <p className="text-17-regular text-[#eeeeee] break-keep">{work.description}</p>
+              <div className="flex gap-2 justify-between items-center mb-1">
+                <h2 className="text-17-bold whitespace-nowrap">What i did?</h2>
+                <div className="w-full h-[1px] bg-[#555555]" />
+              </div>
+              <p className="text-17-regular text-[#eeeeee] break-keep">
+                {work.description}
+              </p>
             </div>
 
             {/* <ul className="ml-5 list-disc">

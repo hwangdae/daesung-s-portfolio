@@ -19,10 +19,10 @@ const Hero = () => {
             <br />
             DAESUNG
           </h1>
-          <div className="mt-[20px]">
+          {/* <div className="mt-[20px]">
             <p className="text-22-thin text-[#E0E0E0] mb-[20px]">WEB</p>
             <p className="text-22-thin text-[#E0E0E0]">PRONTEND DEVELOPER</p>
-          </div>
+          </div> */}
         </div>
         <ul>
           <div className="w-[14px] h-[1px] bg-[#E0E0E0] mb-2" />

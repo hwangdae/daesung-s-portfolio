@@ -33,7 +33,7 @@ const Project = () => {
             프로젝트
           </h1>
         </div>
-        <p className="text-[#444444]">＊프로젝트 클릭 시 세부내용을 확인할 수 있습니다.</p>
+        <p className="text-[#555555]">＊프로젝트 클릭 시 세부내용을 확인할 수 있습니다.</p>
         </div>
         <ul className="w-[60%] flex flex-col items-end mt-8">
           <AnimatePresence>

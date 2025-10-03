@@ -12,10 +12,10 @@ const TechStackSection = ({ techStacks }: PropsType) => {
         <div className="w-[10px] h-[10px] bg-white rounded-[1px]" />
         <h1 className="title-24-bold">사용 기술 및 언어</h1>
       </div>
-      <ul className="flex gap-2">
+      <ul className="flex flex-wrap gap-2">
         {techStacks?.map((techStack) => (
           <li key={techStack.title}>
-            <h1 className="text-16-regular bg-[#2b2b2b] px-3 py-2 mb-[14px]">
+            <h1 className="text-16-regular bg-[#2b2b2b] px-3 py-2 mb-[4px]">
               {techStack.title}
             </h1>
           </li>

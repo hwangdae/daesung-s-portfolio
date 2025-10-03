@@ -10,18 +10,18 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
     <div>
       <div className="flex items-center gap-2 py-[20px]">
         <div className="w-[10px] h-[10px] bg-white rounded-[1px]" />
-        <h1 className="title-24-bold">고민과 작업</h1>
+        <h1 className="title-24-bold">트러블 슈팅</h1>
       </div>
       <ul>
-        {troubleShooting?.map((trouble) => (
-          <li key={trouble.title} className="mb-4">
+        {troubleShooting?.map((troubleShooting) => (
+          <li key={troubleShooting.id} className="mb-4">
             <h1 className="text-17-bold bg-[#2b2b2b] px-3 py-2 mb-[14px]">
-              {trouble.title}
+              {troubleShooting.trouble.title}
             </h1>
             <div className="mb-2">
               <h2 className="underline mb-1 decoration-[#898989]">Why</h2>
               <p className="text-17-regular text-[#eeeeee] break-keep">
-                {trouble.trouble.title}
+                {troubleShooting.trouble.content}
               </p>
             </div>
             <div>
@@ -29,7 +29,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
                 What i did?
               </h2>
               <p className="text-17-regular text-[#eeeeee] break-keep">
-                {trouble.trouble.content}
+                {troubleShooting.trouble.content}
               </p>
             </div>
 
