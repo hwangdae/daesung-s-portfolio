@@ -31,7 +31,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
         animate={{
           width: isOpen ? "100%" : "auto",
         }}
-        className={`border-b border-[#444444] p-8 cursor-pointer flex ${
+        className={`border-b border-[#444444] px-8 py-8 cursor-pointer flex items-center ${
           isOpen ? "bg-[#1b1b1b]" : "bg-transparent"
         }`}
       >

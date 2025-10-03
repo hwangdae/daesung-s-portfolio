@@ -22,10 +22,10 @@ const Project = () => {
     );
   };
   return (
-    <section className="w-full h-[100%] bg-[url(/images/background1.png)]">
-      <div className="max-w-[1300px] h-full mx-auto py-[180px] flex justify-between items-start gap-[85px] relative left-0 top-0">
+    <section className="w-full min-h-[100vh] h-[100%] bg-[url(/images/background1.png)]">
+      <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
         <div className="w-[30%]">
-        <div className="flex items-center gap-4 pt-8 mb-4">
+        <div className="flex items-center gap-4 mb-4">
           <div className="w-[8px] h-[90px] bg-white"></div>
           <h1 className="title-40-black">
             그동안 경험했던
@@ -35,7 +35,7 @@ const Project = () => {
         </div>
         <p className="text-[#555555]">＊프로젝트 클릭 시 세부내용을 확인할 수 있습니다.</p>
         </div>
-        <ul className="w-[60%] flex flex-col items-end mt-8">
+        <ul className="w-[60%] h-full flex flex-col items-end">
           <AnimatePresence>
             {PROJECTS.map((project:ProjectType) => {
               return (

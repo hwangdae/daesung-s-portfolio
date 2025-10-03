@@ -38,9 +38,9 @@ const Hero = () => {
         <div className="w-full h-[1px] bg-[#919191] absolute left-0 top-[850px] z-50 origin-left animate-scale-in-x"></div>
         <div className="w-full h-[1px] bg-[#919191] absolute left-0 top-[850px] z-50 origin-left animate-scale-in-x"></div> */}
 
-        <div className="h-full w-[1px] bg-[#919191] absolute right-[300px] top-0 z-50 origin-top animate-scale-in-y"></div>
-        <div className="h-full w-[1px] bg-[#919191] absolute right-[300px] top-0 z-50 origin-top animate-scale-in-y"></div>
-        <div className="h-full w-[1px] bg-[#919191] absolute right-[300px] top-0 z-50 origin-top animate-scale-in-y"></div>
+<div className="h-full w-[1px] bg-[#444] absolute right-[150px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#444] absolute right-[175px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#444] absolute right-[200px] top-0 z-50 origin-top animate-scale-in-y"></div>
 
         {/* <div className="absolute left-[1450px] top-0 z-40 w-[500px] h-[500px]">
           <img src="/images/hero-circle.png" alt="메인 페이지 꾸미기용 원" />

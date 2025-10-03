@@ -94,7 +94,7 @@ const TOOLITEMS = [
 const Skill = () => {
   return (
     <section className="w-full bg-[url(/images/background2.png)]">
-      <div className="max-w-[1300px] h-full mx-auto py-[180px] flex justify-between flex-col items-start gap-[85px] relative left-0 top-0">
+      <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between flex-col items-start gap-[85px] relative left-0 top-0">
         <div className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[90px] bg-white"></div>
           <h1 className="title-40-black">

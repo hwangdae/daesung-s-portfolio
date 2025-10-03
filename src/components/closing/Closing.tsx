@@ -45,7 +45,7 @@ const Closing = () => {
             inView
               ? "animate-fade-slide-bottom opacity-1"
               : "animate-fade-slide-top-out opacity-0"
-          } text-white flex flex-col items-stretch justify-between`}
+          } text-white h-full flex flex-col items-stretch justify-between`}
         >
           <div>
             <h1 className="title-40-bold mb-4">봐주셔서 감사합니다</h1>
@@ -60,15 +60,19 @@ const Closing = () => {
               inView
                 ? "animate-fade-slide-bottom opacity-1"
                 : "animate-fade-slide-top-out opacity-0"
-            } inline-block`}
+            }`}
           >
             <div className="w-[10px] h-[1px] bg-[#ccc] mb-[12px]"></div>
-            <Link href="https://github.com/hwangdae" target="_blank">
-              <h2 className="text-18-extraLight mb-2">GITHUB</h2>
-            </Link>
-            <Link href="https://reactprac.tistory.com" target="_blank">
-              <h2 className="text-18-extraLight">BLOG</h2>
-            </Link>
+            <h2 className="text-18-extraLight mb-2">
+              <Link href="https://github.com/hwangdae" target="_blank">
+                GITHUB
+              </Link>
+            </h2>
+            <h2 className="text-18-extraLight mb-2">
+              <Link href="https://reactprac.tistory.com" target="_blank">
+                BLOG
+              </Link>
+            </h2>
           </div>
         </div>
         {/* <Footer /> */}
@@ -94,9 +98,9 @@ const Closing = () => {
           inView ? "animate-scale-in-y" : "animate-scale-out-y"
         } h-full border border-primaryWhite absolute right-[50px] top-0 z-50 origin-top opacity-0`}
       /> */}
-      <div className="h-full w-[1px] bg-[#919191] absolute right-[300px] top-0 z-50 origin-top animate-scale-in-y"></div>
-      <div className="h-full w-[1px] bg-[#919191] absolute right-[325px] top-0 z-50 origin-top animate-scale-in-y"></div>
-      <div className="h-full w-[1px] bg-[#919191] absolute right-[350px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#444] absolute right-[150px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#444] absolute right-[175px] top-0 z-50 origin-top animate-scale-in-y"></div>
+      <div className="h-full w-[1px] bg-[#444] absolute right-[200px] top-0 z-50 origin-top animate-scale-in-y"></div>
     </section>
   );
 };
