@@ -13,3 +13,7 @@ export { default as Supabase } from "./Supabase.svg";
 export { default as Typescript } from "./Typescript.svg";
 export { default as Zustand } from "./Zustand.svg";
 export { default as Wave } from "./Wave.svg";
+export { default as ArrowDown } from "./Arrow_down.svg";
+export { default as Arrow } from "./Arrow.svg";
+export { default as Arrow2 } from "./Arrow2.svg";
+

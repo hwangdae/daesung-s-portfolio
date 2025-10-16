@@ -35,7 +35,7 @@ const Project = () => {
         </div>
         <p className="text-[#555555]">＊프로젝트 클릭 시 세부내용을 확인할 수 있습니다.</p>
         </div>
-        <ul className="w-[60%] h-full flex flex-col items-end">
+        <ul className="w-[64%] h-full flex flex-col items-end">
           <AnimatePresence>
             {PROJECTS.map((project:ProjectType) => {
               return (

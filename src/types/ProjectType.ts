@@ -2,11 +2,13 @@ export interface ProjectType {
   id: string;
   title: string;
   description: string;
+  subDescription? : string;
   tags: string[];
   detail?: ProjectDetailType;
 }
 
 export interface ProjectDetailType {
+  description?: string;
   features: {
     title: string;
     items: string[];
@@ -19,17 +21,18 @@ export interface ProjectDetailType {
   }[];
   troubleShooting: {
     id: string;
+    title: string;
     trouble: {
       title: string;
-      content: string[];
+      contents: string[];
     };
     cause: {
       title: string;
-      content: string[];
+      contents: string[];
     };
     solution: {
       title: string;
-      content: string[];
+      contents: string[];
     };
   }[];
 }

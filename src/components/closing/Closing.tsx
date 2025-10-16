@@ -5,8 +5,6 @@ import Footer from "../footer/Footer";
 const Closing = () => {
   const scrollRef = useRef(null);
   const [inView, setInView] = useState(false);
-  let a = "aasddd";
-  console.log(a.length);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

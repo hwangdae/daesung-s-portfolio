@@ -15,7 +15,7 @@ const TechStackSection = ({ techStacks }: PropsType) => {
       <ul className="flex flex-wrap gap-2">
         {techStacks?.map((techStack) => (
           <li key={techStack.title}>
-            <h1 className="text-16-regular bg-[#2b2b2b] px-3 py-2 mb-[4px]">
+            <h1 className="text-16-regular bg-[#333333] px-3 py-2 mb-[4px]">
               {techStack.title}
             </h1>
           </li>

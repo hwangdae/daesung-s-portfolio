@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Black_Han_Sans } from "next/font/google";
+import { Black_Han_Sans, Noto_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -7,6 +7,13 @@ const blackHanSans = Black_Han_Sans({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-blackhan",
+  style: "normal",
+});
+
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--font-notoSans",
   style: "normal",
 });
 
@@ -28,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${blackHanSans.variable} ${pretendard.variable}`}>
+      <body className={`${blackHanSans.variable} ${pretendard.variable} ${notoSans.variable}`}>
         {children}
       </body>
     </html>

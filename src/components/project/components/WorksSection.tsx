@@ -14,33 +14,26 @@ const WorksSection = ({ works }: PropsType) => {
       <ul>
         {works?.map((work) => (
           <li key={work.title} className="mb-4">
-            <h1 className="text-17-bold bg-[#2b2b2b] px-3 py-2 mb-[14px]">
+            <h1 className="text-17-regular bg-[#333333] px-3 py-2 mb-[14px]">
               {work.title}
             </h1>
             <div className="mb-3">
               <div className="flex gap-2 items-center mb-2">
-                <h2 className="text-17-bold whitespace-nowrap">Thinking About</h2>
+                <h2 className="text-17-regular whitespace-nowrap">Thinking About</h2>
                 <div className="w-full h-[1px] bg-[#555555]" />
               </div>
-              <p className="text-17-regular text-[#eeeeee] break-keep">
+              <p className="text-17-light text-[#eeeeee] break-keep">
                 {work.thinking}
               </p>
             </div>
             <div>
               <div className="flex gap-2 justify-between items-center mb-1">
-                <h2 className="text-17-bold whitespace-nowrap">What i did?</h2>
+                <h2 className="text-17-regular whitespace-nowrap">What i did?</h2>
                 <div className="w-full h-[1px] bg-[#555555]" />
               </div>
-              <p className="text-17-regular text-[#eeeeee] break-keep">
-                {work.description}
+              <p className="text-17-light text-[#eeeeee] break-keep" dangerouslySetInnerHTML={{ __html: work.description }}>
               </p>
             </div>
-
-            {/* <ul className="ml-5 list-disc">
-                              {feature.items.map((item, index) => (
-                                <li key={index} className="text-16-regular mb-2">{item}</li>
-                              ))}
-                            </ul> */}
           </li>
         ))}
       </ul>

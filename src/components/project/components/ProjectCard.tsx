@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AnimatePresence, motion } from "motion/react";
 import TechStackSection from "./TechStackSection";
 import FeaturesSection from "./FeaturesSection";
@@ -36,12 +36,20 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
         }`}
       >
         <div>
-          <h2 className="title-26-extraLight break-keep mb-1">
+          <h2 className="title-26-light break-keep mb-1">
             {project.title}
           </h2>
-          <h3 className="text-16-extraLight text-[#ccc] break-keep">
-            {project.description}
-          </h3>
+
+          <motion.h3
+            key={isOpen ? "sub" : "main"}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="text-16-extraLight text-[#ccc] break-keep"
+          >
+            {isOpen ? project.subDescription : project.description}
+          </motion.h3>
         </div>
         <div className="w-[80px]" />
       </motion.div>
@@ -54,6 +62,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            <p>{project.detail?.description}</p>
             {/* 사용 기술 */}
             <TechStackSection techStacks={project.detail?.techStacks} />
             {/* 주요 기능 및 특징 */}
@@ -61,7 +70,9 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
             {/* 작업 기여도 */}
             <WorksSection works={project.detail?.works} />
             {/* 트러블슈팅 */}
-            <TroubleShootingSection troubleShooting={project.detail?.troubleShooting}/>
+            <TroubleShootingSection
+              troubleShooting={project.detail!.troubleShooting}
+            />
           </motion.div>
         )}
       </AnimatePresence>

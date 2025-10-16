@@ -2,45 +2,61 @@ import { ProjectDetailType } from "@/types/ProjectType";
 import React from "react";
 
 interface PropsType {
-  troubleShooting: ProjectDetailType["troubleShooting"] | undefined;
+  troubleShooting: ProjectDetailType["troubleShooting"];
 }
 
 const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
+  console.log(troubleShooting);
   return (
     <div>
       <div className="flex items-center gap-2 py-[20px]">
         <div className="w-[10px] h-[10px] bg-white rounded-[1px]" />
         <h1 className="title-24-bold">트러블 슈팅</h1>
       </div>
-      <ul>
+      <div>
+        <h2 className="text-17-bold bg-[#333333] px-3 py-2 mb-[14px]">
+          {troubleShooting[0]?.title}
+        </h2>
+      </div>
+      <div>
         {troubleShooting?.map((troubleShooting) => (
-          <li key={troubleShooting.id} className="mb-4">
-            <h1 className="text-17-bold bg-[#2b2b2b] px-3 py-2 mb-[14px]">
-              {troubleShooting.trouble.title}
-            </h1>
-            <div className="mb-2">
-              <h2 className="underline mb-1 decoration-[#898989]">Why</h2>
-              <p className="text-17-regular text-[#eeeeee] break-keep">
-                {troubleShooting.trouble.content}
-              </p>
-            </div>
-            <div>
-              <h2 className="underline mb-1 decoration-[#898989]">
-                What i did?
+          <div key={troubleShooting.id} className="mb-4">
+            <div className="flex gap-2 items-center mb-2">
+              <h2 className="text-17-bold whitespace-nowrap">
+                {troubleShooting.trouble.title}
               </h2>
-              <p className="text-17-regular text-[#eeeeee] break-keep">
-                {troubleShooting.trouble.content}
-              </p>
+              <div className="w-full h-[1px] bg-[#555555]" />
             </div>
-
-            {/* <ul className="ml-5 list-disc">
-                              {feature.items.map((item, index) => (
-                                <li key={index} className="text-16-regular mb-2">{item}</li>
-                              ))}
-                            </ul> */}
-          </li>
+            <ul className="mb-3">
+              {troubleShooting.trouble.contents.map((content, i) => {
+                return <li key={i}>{content}</li>;
+              })}
+            </ul>
+            <div className="flex gap-2 items-center mb-2">
+              <h3 className="text-17-bold whitespace-nowrap">
+                {troubleShooting.cause.title}
+              </h3>
+              <div className="w-full h-[1px] bg-[#555555]" />
+            </div>
+            <ul className="mb-3">
+              {troubleShooting.cause.contents.map((content, i) => {
+                return <li key={i}>{content}</li>;
+              })}
+            </ul>
+            <div className="flex gap-2 items-center mb-2">
+              <h3 className="text-17-bold whitespace-nowrap">
+                {troubleShooting.solution.title}
+              </h3>
+              <div className="w-full h-[1px] bg-[#555555]" />
+            </div>
+            <ul className="mb-3">
+              {troubleShooting.solution.contents.map((content, i) => {
+                return <li key={i}>{content}</li>;
+              })}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
