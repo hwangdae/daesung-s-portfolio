@@ -1,33 +1,10 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import Footer from "../footer/Footer";
+import { useScrollRef } from "@/hooks/scrollRef";
 
 const Closing = () => {
-  const scrollRef = useRef(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        } else {
-          setInView(false);
-        }
-      },
-      {
-        threshold: 0.8,
-      }
-    );
-    if (scrollRef.current) {
-      observer.observe(scrollRef.current);
-    }
-    return () => {
-      if (scrollRef.current) {
-        observer.unobserve(scrollRef.current);
-      }
-    };
-  }, []);
+  const { scrollRef, inView } = useScrollRef();
 
   return (
     <section
