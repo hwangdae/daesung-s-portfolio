@@ -9,8 +9,6 @@ export const useScrollRef = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-        } else {
-          setInView(false);
         }
       },
       {

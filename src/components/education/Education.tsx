@@ -1,5 +1,7 @@
 import React from "react";
 import EducationCard from "./components/EducationCard";
+import FadeInView from "../ui/FadeInView";
+import LineFadeInView from "../ui/LineFadeInView";
 
 const EDUCATIONS = [
   {
@@ -38,13 +40,13 @@ const EDUCATIONS = [
 
 const Education = () => {
   return (
-    <section className="w-full h-[100vh] bg-[url(/images/background2.png)]">
-      <div className="max-w-[1300px] h-full mx-auto  flex justify-between items-start">
-        <div className="w-[30%] flex items-center gap-4 py-[12vh]">
+    <section className="w-full bg-[url(/images/background2.png)]">
+      <div className="max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
+        <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[46px] bg-white" />
           <h1 className="title-40-black">학습했던 과정들</h1>
-        </div>
-        <div className="flex flex-col justify-center w-[70%] h-full">
+        </FadeInView>
+        <div className="relative left-0 top-0 flex flex-col justify-center w-[70%] h-full mt-[120px]">
           <ul className="h-full">
             {EDUCATIONS.map((education, i) => {
               return (
@@ -59,6 +61,10 @@ const Education = () => {
               );
             })}
           </ul>
+          <LineFadeInView
+            position="y"
+            className="absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-[100%] bg-[#444]"
+          ></LineFadeInView>
         </div>
       </div>
     </section>

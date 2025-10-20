@@ -14,7 +14,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
         <h1 className="title-24-bold">트러블 슈팅</h1>
       </div>
       <div>
-        <h2 className="text-17-bold bg-[#333333] px-3 py-2 mb-[14px]">
+        <h2 className="text-17-regular bg-[#333333] px-3 py-2 mb-[14px]">
           {troubleShooting[0]?.title}
         </h2>
       </div>
@@ -22,7 +22,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
         {troubleShooting?.map((troubleShooting) => (
           <div key={troubleShooting.id} className="mb-4">
             <div className="flex gap-2 items-center mb-2">
-              <h2 className="text-17-bold whitespace-nowrap">
+              <h2 className="text-17-regular whitespace-nowrap">
                 {troubleShooting.trouble.title}
               </h2>
               <div className="w-full h-[1px] bg-[#555555]" />

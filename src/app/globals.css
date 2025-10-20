@@ -41,7 +41,7 @@ strong {
 .hero-64-regular {
   font-family: var(--font-blackhan);
   font-size: 64px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 62px;
   letter-spacing: 0.04em;
 }

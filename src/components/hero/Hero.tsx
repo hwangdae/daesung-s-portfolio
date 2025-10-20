@@ -13,11 +13,11 @@ const Hero = () => {
       <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex flex-col justify-between">
         <div>
           <h1 className="hero-64-regular text-white">
-            HELLO,
+            안녕하세요,
             <br />
-            I'M
+            프론트엔드 개발자
             <br />
-            DAESUNG
+            황대성 입니다.
           </h1>
           {/* <div className="mt-[20px]">
             <p className="text-22-thin text-[#E0E0E0] mb-[20px]">WEB</p>
@@ -25,7 +25,7 @@ const Hero = () => {
           </div> */}
         </div>
         <ul>
-          <div className="w-[14px] h-[1px] bg-[#E0E0E0] mb-2" />
+          <div className="w-[14px] h-[1px] bg-[#848484] mb-2" />
           {ABOUTS.map((about) => {
             return (
               <li key={about}>
@@ -34,9 +34,7 @@ const Hero = () => {
             );
           })}
         </ul>
-        {/* <div className="w-full h-[1px] bg-[#919191] absolute left-0 top-[850px] z-50 origin-left animate-scale-in-x"></div>
-        <div className="w-full h-[1px] bg-[#919191] absolute left-0 top-[850px] z-50 origin-left animate-scale-in-x"></div>
-        <div className="w-full h-[1px] bg-[#919191] absolute left-0 top-[850px] z-50 origin-left animate-scale-in-x"></div> */}
+
 
 <div className="h-full w-[1px] bg-[#444] absolute right-[150px] top-0 z-50 origin-top animate-scale-in-y"></div>
       <div className="h-full w-[1px] bg-[#444] absolute right-[175px] top-0 z-50 origin-top animate-scale-in-y"></div>

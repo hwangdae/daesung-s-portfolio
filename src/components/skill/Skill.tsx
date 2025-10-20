@@ -11,6 +11,8 @@ import {
 } from "@/assets";
 import SkillItem from "./SkillItem";
 import { motion } from "motion/react";
+import FadeInView from "../ui/FadeInView";
+import LineFadeInView from "../ui/LineFadeInView";
 
 const SKILLITEMS = [
   {
@@ -95,21 +97,21 @@ const Skill = () => {
   return (
     <section className="w-full bg-[url(/images/background2.png)]">
       <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between flex-col items-start gap-[85px] relative left-0 top-0">
-        <div className="w-[30%] flex items-center gap-4">
+        <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[90px] bg-white"></div>
           <h1 className="title-40-black">
             사용하는 기술
             <br />
             그리고 툴
           </h1>
-        </div>
+        </FadeInView>
         <div className="w-[100%] mt-[70px]">
           <div className="mb-[80px]">
-            <div className="flex items-center gap-4  mb-6">
+            <FadeInView className="flex items-center gap-4  mb-6">
               <h2 className="title-28-regular">기술</h2>
-              <div className="flex flex-1 h-[1px] bg-[#444444]"/>
-            </div>
-            <ul className="grid grid-cols-2 gap-5">
+              <LineFadeInView className="flex flex-1 h-[1px] bg-[#444444]"/>
+            </FadeInView>
+            <FadeInView as="ul" className="grid grid-cols-2 gap-5">
               {SKILLITEMS.map((skillItem) => {
                 return (
                   <li key={skillItem.id} className="relative">
@@ -124,14 +126,14 @@ const Skill = () => {
                   </li>
                 );
               })}
-            </ul>
+            </FadeInView>
           </div>
           <div>
             <div className="flex items-center gap-4  mb-6">
               <h2 className="title-28-regular">툴</h2>
-              <div className="flex flex-1 h-[1px] bg-[#444444]"/>
+              <LineFadeInView className="flex flex-1 h-[1px] bg-[#444444]"/>
             </div>
-            <ul className="grid grid-cols-2 gap-5">
+            <FadeInView className="grid grid-cols-2 gap-5">
               {TOOLITEMS.map((tollItem) => {
                 return (
                   <li key={tollItem.id} className="relative">
@@ -146,7 +148,7 @@ const Skill = () => {
                   </li>
                 );
               })}
-            </ul>
+            </FadeInView>
           </div>
         </div>
       </div>

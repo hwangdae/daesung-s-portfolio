@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import TechStackSection from "./TechStackSection";
 import FeaturesSection from "./FeaturesSection";
 import WorksSection from "./WorksSection";
 import { ProjectType } from "@/types/ProjectType";
 import TroubleShootingSection from "./TroubleShootingSection";
+import { useScrollRef } from "@/hooks/scrollRef";
+import { animate } from "motion";
 
 interface PropsType {
   project: ProjectType;
@@ -13,17 +15,23 @@ interface PropsType {
 }
 
 const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
+  const { scrollRef, inView } = useScrollRef();
+
   return (
     <motion.li
-      initial={{ background: "transparent" }}
+      ref={scrollRef}
+      initial={{ background: "transparent", x: 100, opacity: 0 }}
       animate={{
+        x: inView ? 0 : 100,
+        opacity: inView ? 1 : 0,
         width: isOpen ? "100%" : "auto",
       }}
       whileHover={{
         width: "100%",
+        transition: { duration: 0.6, delay: 0 }
       }}
       exit={{ width: "auto" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
     >
       {/* 타이틀 */}
       <motion.div
@@ -36,9 +44,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
         }`}
       >
         <div>
-          <h2 className="title-26-light break-keep mb-1">
-            {project.title}
-          </h2>
+          <h2 className="title-26-light break-keep mb-1">{project.title}</h2>
 
           <motion.h3
             key={isOpen ? "sub" : "main"}
