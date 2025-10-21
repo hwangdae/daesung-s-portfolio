@@ -28,6 +28,7 @@ body {
 }
 
 strong {
+  color: #e2e2e2;
   font-weight: 600;
 }
 
@@ -40,10 +41,19 @@ strong {
 /* 히어로 */
 .hero-64-regular {
   font-family: var(--font-blackhan);
-  font-size: 64px;
+  font-size: 58px;
   font-weight: 500;
   line-height: 62px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+}
+
+/* 클로즈 */
+.close-42-regular {
+  font-family: var(--font-blackhan);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0.02em;
 }
 
 /* 타이틀 */

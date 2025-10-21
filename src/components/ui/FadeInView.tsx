@@ -5,7 +5,7 @@ import { useScrollRef } from "@/hooks/scrollRef";
 interface PropType {
   as?: React.ElementType;
   children: React.ReactNode;
-  className: string;
+  className?: string;
   delay?: number;
 }
 
@@ -23,7 +23,7 @@ const FadeInView = ({
       initial={{ opacity: 0, y: -20 }}
       animate={inView && { opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay }}
-      className={className}
+      className={`${className} list-none`}
     >
       {children}
     </motion.div>
