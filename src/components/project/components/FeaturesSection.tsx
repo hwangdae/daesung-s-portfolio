@@ -24,16 +24,22 @@ const FeaturesSection = ({ features }: PropsType) => {
       </div>
       <ul>
         {features?.map((feature, i) => (
-          <li key={i} className="mb-4 cursor-pointer" onClick={() => handleclick(i)}>
+          <li
+            key={i}
+            className="mb-4 cursor-pointer"
+            onClick={() => handleclick(i)}
+          >
             <div className="flex justify-between bg-[#333333] mb-[14px] px-3 py-2">
               <h1 className="text-17-regular">{feature.title}</h1>
-              <button
-                className={`w-[24px] h-full transition-transform duration-300 ${
-                  openFeatures.includes(i) ? "rotate-180" : ""
-                }`}
-              >
-                <Arrow2 />
-              </button>
+              {feature.items.length > 0 && (
+                <button
+                  className={`w-[24px] h-full transition-transform duration-300 ${
+                    openFeatures.includes(i) ? "rotate-180" : ""
+                  }`}
+                >
+                  <Arrow2 />
+                </button>
+              )}
             </div>
             <AnimatePresence>
               {openFeatures.includes(i) && (
