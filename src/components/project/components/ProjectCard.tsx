@@ -19,8 +19,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
   const { scrollRef, inView } = useScrollRef();
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.stopPropagation(); // 👈 이벤트 버블링 중단
-    console.log("링크만 클릭됨");
+    e.stopPropagation();
   };
   return (
     <motion.li
@@ -65,7 +64,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
               <Link
                 onClick={handleClick}
                 target="_blank"
-                href="https://github.com/GTable/NoWait_FE"
+                href={project.github}
                 className="text-16-extraLight"
               >
                 GITHUB
@@ -74,7 +73,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
               <Link
                 onClick={handleClick}
                 target="_blank"
-                href="https://naver.com"
+                href={project.site || ""}
                 className="text-16-extraLight"
               >
                 SITE

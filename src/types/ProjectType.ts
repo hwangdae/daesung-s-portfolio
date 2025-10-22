@@ -2,8 +2,10 @@ export interface ProjectType {
   id: string;
   title: string;
   description: string;
-  subDescription? : string;
+  subDescription: string;
   tags: string[];
+  github: string;
+  site?: string;
   detail?: ProjectDetailType;
 }
 
