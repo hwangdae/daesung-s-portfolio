@@ -14,10 +14,7 @@ export const MYSELECTSHOP_DETAIL = {
     },
     {
       title: "매장에 대한 리뷰 작성 기능",
-      items: [
-        "QR 코드 스캔을 통한 간편 주문 가능",
-        "주문 내역을 통한 주문 현황 제공",
-      ],
+      items: [],
     },
     {
       title: "유저 팔로우, 팔로워 기능",
@@ -28,7 +25,7 @@ export const MYSELECTSHOP_DETAIL = {
     },
     {
       title: "유저 채팅 기능",
-      items: ["유저 간 1:1 채팅 가능"],
+      items: [],
     },
     {
       title: "지역 베스트 리뷰어 기능",
@@ -49,11 +46,11 @@ export const MYSELECTSHOP_DETAIL = {
   ],
   works: [
     {
-      title: "LocalStorage 기반 장바구니 구현",
+      title: "",
       thinking:
-        "LocalStorage를 사용하면서 상태가 변경될 때마다 데이터 동기화 코드를 작성해야 하고, JSON 직렬화와 파싱까지 수동으로 처리해야 하는 비효율적인 코드가 발생했습니다.",
+        "유저와 리뷰 데이터를 한 번에 가져오는 구조는 단순하지만, 리뷰가 많아질수록 데이터가 비대해져 성능 저하가 발생했습니다. 특히 이미지가 포함된 리뷰 데이터의 특성상 이 문제가 더욱 심각했습니다.",
       description:
-        "Zustand의 persist 미들웨어를 적용하여 상태와 LocalStorage 간 동기화를 자동화함으로써, 데이터 불일치로 인한 오류를 크게 줄였습니다.",
+        "이를 해결하기 위해 유저 데이터와 리뷰 데이터를 분리하여 관리하고, 무한스크롤 및 Lazy Loading 방식을 적용했습니다. 그 결과, 데이터 로딩 효율성과 사용자 경험을 모두 개선할 수 있었습니다.",
     },
     {
       title: "장바구니 품절 처리 개선",
