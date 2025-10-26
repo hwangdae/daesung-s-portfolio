@@ -47,7 +47,7 @@ const FeaturesSection = ({ features }: PropsType) => {
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="ml-5 list-disc overflow-hidden"
+                  className="ml-2 list-disc list-inside overflow-hidden"
                 >
                   {feature.items.map((item, index) => (
                     <li

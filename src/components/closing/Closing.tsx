@@ -19,31 +19,31 @@ const Closing = () => {
           </FadeInView>
           <FadeInView className="flex gap-[26px]">
             <div>
-              <h2 className="text-18-extraLight pb-2">
+              <h2 className="text-18-extraLight pb-1">
                 <Link href="https://github.com/hwangdae" target="_blank">
                   GITHUB
                 </Link>
               </h2>
-              <div className="w-[100%] h-[2px] bg-[#ccc]" />
+              <div className="w-[100%] h-[1px] bg-[#ccc]" />
             </div>
             <div>
-              <h2 className="text-18-extraLight pb-2">
+              <h2 className="text-18-extraLight pb-1">
                 <Link href="https://reactprac.tistory.com" target="_blank">
                   BLOG
                 </Link>
               </h2>
-              <div className="w-[100%] h-[2px] bg-[#ccc]" />
+              <div className="w-[100%] h-[1px] bg-[#ccc]" />
             </div>
           </FadeInView>
         </div>
         {/* <Footer /> */}
-        <FadeInView
-          delay={2.9}
-          className="absolute right-[200px] bottom-[80px] z-50 origin-top cursor-pointer block px-5"
+        {/* <FadeInView
+          delay={2}
+          className="absolute right-[200px] top-[80px] z-50 origin-top cursor-pointer block px-5"
         >
           <div className="h-[200px] w-[1px] bg-[#444] relative right-0 bottom-0"></div>
           <div className="h-[20px] w-[1px] bg-[#444] relative right-[7px] top-[16px] -rotate-45" />
-        </FadeInView>
+        </FadeInView> */}
       </div>
     </section>
   );

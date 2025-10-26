@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex flex-col justify-between">
         <div>
           <ReactTyped
-            strings={[`안녕하세요<br>프론트엔드 개발자<br>황대성 입니다.`]}
+            strings={[`안녕하세요,<br>프론트엔드 개발자<br>황대성 입니다.`]}
             typeSpeed={80}
             showCursor={false}
             className="hero-64-regular text-white"
