@@ -13,16 +13,17 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
         <div className="w-[10px] h-[10px] bg-white rounded-[1px]" />
         <h1 className="title-24-bold">트러블 슈팅</h1>
       </div>
-      <div>
-        <h2 className="text-17-regular bg-[#333333] px-3 py-2 mb-[14px]">
-          {troubleShooting[0]?.title}
-        </h2>
-      </div>
+
       <div>
         {troubleShooting?.map((troubleShooting) => (
           <div key={troubleShooting.id} className="mb-4">
+            <div>
+              <h2 className="text-17-regular bg-[#333333] px-3 py-2 mb-[14px]">
+                {troubleShooting.title}
+              </h2>
+            </div>
             <div className="flex gap-2 items-center mb-2">
-              <h2 className="text-17-regular whitespace-nowrap">
+              <h2 className="text-17-regular whitespace-nowrap text-[#777777]">
                 {troubleShooting.trouble.title}
               </h2>
               <div className="w-full h-[1px] bg-[#555555]" />
@@ -33,7 +34,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
               })}
             </ul>
             <div className="flex gap-2 items-center mb-2">
-              <h3 className="text-17-bold whitespace-nowrap">
+              <h3 className="text-17-regular whitespace-nowrap text-[#777777]">
                 {troubleShooting.cause.title}
               </h3>
               <div className="w-full h-[1px] bg-[#555555]" />
@@ -44,7 +45,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
               })}
             </ul>
             <div className="flex gap-2 items-center mb-2">
-              <h3 className="text-17-bold whitespace-nowrap">
+              <h3 className="text-17-regular whitespace-nowrap text-[#777777]">
                 {troubleShooting.solution.title}
               </h3>
               <div className="w-full h-[1px] bg-[#555555]" />

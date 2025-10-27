@@ -9,7 +9,8 @@ interface PropsType {
 
 const FeaturesSection = ({ features }: PropsType) => {
   const [openFeatures, setOpenFeatures] = useState<number[]>([]);
-  const handleclick = (i: number) => {
+  const handleclick = (item: number, i: number) => {
+    if (item < 1) return;
     if (openFeatures.includes(i)) {
       setOpenFeatures(openFeatures.filter((index) => index !== i));
     } else {
@@ -27,7 +28,7 @@ const FeaturesSection = ({ features }: PropsType) => {
           <li
             key={i}
             className="mb-4 cursor-pointer"
-            onClick={() => handleclick(i)}
+            onClick={() => handleclick(feature.items.length, i)}
           >
             <div className="flex justify-between bg-[#333333] mb-[14px] px-3 py-2">
               <h1 className="text-17-regular">{feature.title}</h1>
