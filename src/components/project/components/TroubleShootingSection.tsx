@@ -30,7 +30,11 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
             </div>
             <ul className="mb-3">
               {troubleShooting.trouble.contents.map((content, i) => {
-                return <li key={i}>{content}</li>;
+                return (
+                  <li key={i}>
+                    <p className="text-17-light text-[#eeeeee] break-keep">{content}</p>
+                  </li>
+                );
               })}
             </ul>
             <div className="flex gap-2 items-center mb-2">
@@ -41,7 +45,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
             </div>
             <ul className="mb-3">
               {troubleShooting.cause.contents.map((content, i) => {
-                return <li key={i}>{content}</li>;
+                return <li key={i}> <p className="text-17-light text-[#eeeeee] break-keep">{content}</p></li>;
               })}
             </ul>
             <div className="flex gap-2 items-center mb-2">
@@ -52,7 +56,7 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
             </div>
             <ul className="mb-3">
               {troubleShooting.solution.contents.map((content, i) => {
-                return <li key={i}>{content}</li>;
+                return <li key={i}> <p className="text-17-light text-[#eeeeee] break-keep">{content}</p></li>;
               })}
             </ul>
           </div>
