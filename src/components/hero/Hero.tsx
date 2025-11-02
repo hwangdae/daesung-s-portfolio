@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ReactTyped } from "react-typed";
 import FadeInView from "../ui/FadeInView";
 
@@ -10,6 +10,19 @@ const ABOUTS = [
 ];
 
 const Hero = () => {
+  const [fontReady, setFontReady] = useState(false);
+
+  // useEffect(() => {
+  //   // 폰트가 모두 로드될 때까지 기다림
+  //   document.fonts.ready.then(() => {
+  //     setFontReady(true);
+  //   });
+  // }, []);
+
+  // if (!fontReady) {
+  //   // 폰트 로딩 중에는 전체 숨기거나, 로딩 플레이스홀더 보여주기
+  //   return <div style={{ height: "200px" }} />; // 공간 유지용
+  // }
   return (
     <section className="bg-[url(/images/hero-image2.png)] w-full h-[100vh] relative right-0 top-0 overflow-hidden">
       <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex flex-col justify-between">
@@ -35,15 +48,14 @@ const Hero = () => {
             );
           })}
         </FadeInView>
-        {/* <div className="h-full w-[1px] bg-[#444] absolute right-[150px] top-0 z-50 origin-top animate-scale-in-y"></div>
-        <div className="h-full w-[1px] bg-[#444] absolute right-[175px] top-0 z-50 origin-top animate-scale-in-y"></div> */}
-        <FadeInView delay={2.9} className="absolute right-[200px] bottom-[80px] z-50 origin-top cursor-pointer block px-5">
-          <div className="h-[200px] w-[1px] bg-[#444] relative right-0 bottom-0"></div>
+
+        <FadeInView
+          delay={2.9}
+          className="absolute right-[200px] bottom-[80px] z-50 origin-top cursor-pointer block px-5"
+        >
+          <div className="h-[730px] w-[1px] bg-[#444] relative right-0 bottom-0"></div>
           <div className="h-[20px] w-[1px] bg-[#444] relative right-[7px] bottom-[16px] -rotate-45" />
         </FadeInView>
-        {/* <div className="absolute left-[1450px] top-0 z-40 w-[500px] h-[500px]">
-          <img src="/images/hero-circle.png" alt="메인 페이지 꾸미기용 원" />
-        </div> */}
       </div>
     </section>
   );

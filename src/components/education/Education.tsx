@@ -40,13 +40,13 @@ const EDUCATIONS = [
 
 const Education = () => {
   return (
-    <section className="relative left-0 top-0 w-full bg-[url(/images/background2.png)]">
+    <section className="relative right-0 top-0 w-full bg-[url(/images/background2.png)]">
       <div className="max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
         <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[46px] bg-white" />
           <h1 className="title-40-black">학습했던 과정들</h1>
         </FadeInView>
-        <div className="flex flex-col justify-center w-[70%] h-full mt-[120px]">
+        <div className="relative right-0 top-0 flex flex-col justify-center w-[70%] h-full mt-[120px]">
           <ul className="h-full">
             {EDUCATIONS.map((education, i) => {
               return (
@@ -63,7 +63,7 @@ const Education = () => {
           </ul>
           <LineFadeInView
             position="y"
-            className="absolute left-[1147px] top-0 w-[2px] h-[100%] bg-[#444]"
+            className="absolute right-[454px] top-0 w-[2px] h-[100%] bg-[#444]"
           ></LineFadeInView>
         </div>
       </div>

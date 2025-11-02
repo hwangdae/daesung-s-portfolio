@@ -1,7 +1,8 @@
-import { Arrow, Arrow2, ArrowDown } from "@/assets";
+import { Arrow2 } from "@/assets";
 import { ProjectDetailType } from "@/types/ProjectType";
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { AiFillProduct } from "react-icons/ai";
 
 interface PropsType {
   features: ProjectDetailType["features"] | undefined;
@@ -20,7 +21,7 @@ const FeaturesSection = ({ features }: PropsType) => {
   return (
     <div>
       <div className="flex items-center gap-2 py-[20px]">
-        <div className="w-[10px] h-[10px] bg-white rounded-[1px]" />
+        <AiFillProduct size={"23px"} />
         <h1 className="title-24-bold">주요 기능 및 특징</h1>
       </div>
       <ul>

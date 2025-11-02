@@ -66,7 +66,7 @@ export const NOWAIT_DETAIL = {
       thinking:
         "웨이팅 등록 및 주문 시스템에서 가장 중요하게 고려한 부분은 중복 처리 방지였습니다. 특히 웨이팅 등록은 사용자가 빠르게 여러 번 클릭할 가능성이 높다고 판단했습니다.",
       description:
-        "간단하게 state와 버튼의 disabled 속성을 활용해, 한 번 클릭 시 버튼이 비활성화되도록 구현하여 중복 요청 문제를 효과적으로 방지했습니다.",
+        "간단하게 <strong>state와 버튼의 disabled 속성을 활용해, 한 번 클릭 시 버튼이 비활성화되도록 구현하여 중복 요청 문제를 효과적으로 방지</strong>했습니다.",
     },
     {
       title: "카카오 지도 API를 활용한 대학교 축제 맵 구현",
@@ -120,7 +120,7 @@ export const NOWAIT_DETAIL = {
       solution: {
         title: "해결방법",
         contents: [
-          "Axios나 Fetch 요청 시 `withCredentials: true` 옵션을 추가하여 쿠키가 함께 전송되도록 설정했습니다.",
+          'Axios나 Fetch 요청 시 "withCredentials: true" 옵션을 추가하여 쿠키가 함께 전송되도록 설정했습니다.',
           "개발 환경에서는 프록시를 이용해 프론트엔드와 백엔드의 도메인과 포트를 통일시켜, SameSite 정책으로 인한 쿠키 전송 제한 문제를 해결했습니다.",
         ],
       },
