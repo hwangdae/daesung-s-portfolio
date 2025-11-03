@@ -24,7 +24,7 @@ const Hero = () => {
   //   return <div style={{ height: "200px" }} />; // 공간 유지용
   // }
   return (
-    <section className="bg-[url(/images/hero-image2.png)] w-full h-[100vh] relative right-0 top-0 overflow-hidden">
+    <section className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] relative right-0 top-0 overflow-hidden">
       <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex flex-col justify-between">
         <div>
           <ReactTyped

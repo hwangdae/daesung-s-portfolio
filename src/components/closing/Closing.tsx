@@ -6,7 +6,7 @@ import FadeInView from "../ui/FadeInView";
 
 const Closing = () => {
   return (
-    <section className="bg-[url(/images/hero-image2.png)] w-full h-[100vh] relative right-0 top-0">
+    <section className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] relative right-0 top-0">
       <div className="max-w-[1300px] h-full mx-auto py-[14vh]">
         <div className="text-white h-full flex flex-col items-center justify-center text-center">
           <FadeInView className=" mb-16">
