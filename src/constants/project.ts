@@ -33,7 +33,7 @@ export const PROJECTS = [
     tags: ["팀", "사이드"],
     github: "https://github.com/hwangdae/nbc_final_pyeonsik",
     site: "",
-    detail: MYSELECTSHOP_DETAIL,
+    detail: PYEONSIK_DETAIL,
   },
   {
     id: "daesungPortfolio",

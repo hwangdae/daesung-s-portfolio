@@ -60,11 +60,10 @@ export const MYSELECTSHOP_DETAIL = {
         "이를 해결하기 위해 업로드 시점에서 이미지를 browser-image-compression 라이브러리를 사용해 사전 압축하고, WebP 포맷으로 자동 변환되도록 구현했습니다. 그 결과, 이미지 평균 용량을 약 73% 절감하면서도 품질 저하 없이 웹페이지 로딩 속도와 Lighthouse SEO 점수를 모두 개선할 수 있었습니다.",
     },
     {
-      title: "낙관적 업데이트를 통한 북마크 기능 사용자 경험 개선",
+      title: "폰트 최적화를 통해 파일 크기를 50% 감소시키고, Lighthouse Performance 점수를 54점 → 84점으로 향상",
       thinking:
-        "북마크 기능을 구현하면서 API 응답을 기다린 후 UI를 갱신하면, 사용자가 북마크 버튼을 눌렀을 때 즉각적인 반응이 없어 지연된 느낌을 주는 문제가 있었습니다. 이로 인해 사용자 경험(UX)이 저하될 우려가 있었습니다.",
-      description:
-        "ReactQuery setQueryData를 활용하여 사용자가 북마크 버튼을 클릭하면, API 응답을 기다리지 않고 즉시 UI에 반영하는 낙관적 업데이트를 구현하여 사용자 경험을 개선했습니다. 요청 실패 상황에서도 롤백을 통해 데이터 정합성을 보장 했습니다.",
+        "",
+      description:""
     },
     {
       title: "GitHub Actions 기반 CI/CD 파이프라인 구축",

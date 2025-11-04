@@ -61,17 +61,10 @@ export const PYEONSIK_DETAIL = {
       description:
         "스와이프 제스처와 회전 모션을 결합해 자연스러운 카드 이동감을 구현하여, 사용자 경험을 개선했습니다. 이를 통해 신상품 리뷰 작성 과정이 단조롭지 않게 느껴지도록 만들어 사용자의 인터랙션 몰입도와 서비스 완성도를 높였습니다.",
     },
-    {
-      title: "Discord PR 알림 시스템 구축",
-      thinking:
-        "기존에는 PR시 Discord의 DM을 통해 PR 체크를 부탁 했어야 했고, 매번 요청을 보내는 것이 비효율적이라고 생각 했습니다. 매번 수동으로 요청을 보내야 했기 때문에 협업 효율이 떨어지고 반복 작업이 많았습니다.",
-      description:
-        "WebHook을 사용하여 팀원이 GitHub에 직접 접속하지 않아도 실시간으로 코드 리뷰 상황을 확인할 수 있도록 하여 협업 효율을 향상시켰습니다.",
-    },
   ],
   troubleShooting: [
     {
-      id: "mySelectshop",
+      id: "1",
       title: "CORS 설정 미비로 인한 쿠키 미전송 문제",
       trouble: {
         title: "문제점",
