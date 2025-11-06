@@ -96,8 +96,9 @@ const TOOLITEMS = [
 
 const Skill = () => {
   return (
-    <section className="w-full">
+    <section className="relative w-full">
       <Image
+      className="relative -z-1"
         src={"/images/background2.png"}
         alt="사용 기술 백그라운드 이미지"
         fill

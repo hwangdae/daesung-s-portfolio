@@ -8,7 +8,7 @@ const AboutMe = () => {
   return (
     <section className="relative left-0 top-0 w-full h-[100vh]">
       <Image
-      className="relative left-0 top-0 -z-20"
+      className="relative left-0 top-0 -z-1"
         src={"/images/background2.png"}
         alt="소개 백그라운드 이미지"
         fill

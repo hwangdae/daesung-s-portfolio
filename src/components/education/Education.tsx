@@ -43,6 +43,7 @@ const Education = () => {
   return (
     <section className="relative right-0 top-0 w-full">
             <Image
+            className="relative -z-1"
               src={"/images/background2.png"}
               alt="교육내용 백그라운드 이미지"
               fill

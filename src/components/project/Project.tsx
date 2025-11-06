@@ -14,12 +14,13 @@ const Project = () => {
     );
   };
   return (
-    <section className="w-full min-h-[100vh] h-[100%]">
-            <Image
-              src={"/images/background2.png"}
-              alt="프로젝트 백그라운드 이미지"
-              fill
-            />
+    <section className="relative w-full min-h-[100vh] h-[100%]">
+      <Image
+        className="relative -z-1"
+        src={"/images/background2.png"}
+        alt="프로젝트 백그라운드 이미지"
+        fill
+      />
       <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
         <FadeInView className="w-[30%]">
           <div className="flex items-center gap-4 mb-4">
