@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { ReactTyped } from "react-typed";
 import FadeInView from "../ui/FadeInView";
+
+interface HeroProps {
+  onScrollClick: () => void;
+}
 
 const ABOUTS = [
   "hwangdeveloper@naver.com",
@@ -9,22 +13,35 @@ const ABOUTS = [
   "github.com/HwangDae",
 ];
 
-const Hero = () => {
-  const [fontReady, setFontReady] = useState(false);
+const Hero = ({ onScrollClick }: HeroProps) => {
+  const heroRef = useRef<HTMLDivElement | null>(null);
 
-  // useEffect(() => {
-  //   // 폰트가 모두 로드될 때까지 기다림
-  //   document.fonts.ready.then(() => {
-  //     setFontReady(true);
-  //   });
-  // }, []);
+  useEffect(() => {
+    const preventScroll = (e: Event) => e.preventDefault();
 
-  // if (!fontReady) {
-  //   // 폰트 로딩 중에는 전체 숨기거나, 로딩 플레이스홀더 보여주기
-  //   return <div style={{ height: "200px" }} />; // 공간 유지용
-  // }
+    const el = heroRef.current;
+    if (el) {
+      el.addEventListener("wheel", preventScroll, { passive: false });
+      el.addEventListener("touchmove", preventScroll, { passive: false });
+    }
+
+    const timer = setTimeout(() => {
+      if (el) {
+        el.removeEventListener("wheel", preventScroll);
+        el.removeEventListener("touchmove", preventScroll);
+      }
+    }, 2800);
+
+    return () => {
+      clearTimeout(timer);
+      if (el) {
+        el.removeEventListener("wheel", preventScroll);
+        el.removeEventListener("touchmove", preventScroll);
+      }
+    };
+  }, []);
   return (
-    <section className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] relative right-0 top-0 overflow-hidden">
+    <section ref={heroRef} className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] relative right-0 top-0">
       <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex flex-col justify-between">
         <div>
           <ReactTyped
@@ -33,10 +50,6 @@ const Hero = () => {
             showCursor={false}
             className="hero-64-regular text-white"
           ></ReactTyped>
-          {/* <div className="mt-[20px]">
-            <p className="text-22-thin text-[#E0E0E0] mb-[20px]">WEB</p>
-            <p className="text-22-thin text-[#E0E0E0]">PRONTEND DEVELOPER</p>
-          </div> */}
         </div>
         <FadeInView delay={2.7}>
           <div className="w-[14px] h-[1px] bg-[#848484] mb-2" />
@@ -48,14 +61,15 @@ const Hero = () => {
             );
           })}
         </FadeInView>
-
-        <FadeInView
-          delay={2.9}
+        <button
+          onClick={onScrollClick}
           className="absolute right-[200px] bottom-[80px] z-50 origin-top cursor-pointer block px-5"
         >
-          <div className="h-[730px] w-[1px] bg-[#444] relative right-0 bottom-0"></div>
-          <div className="h-[20px] w-[1px] bg-[#444] relative right-[7px] bottom-[16px] -rotate-45" />
-        </FadeInView>
+          <FadeInView delay={2.9}>
+            <div className="h-[60vh] w-[1px] bg-[#444] relative right-0 bottom-0"></div>
+            <div className="h-[20px] w-[1px] bg-[#444] relative right-[7px] bottom-[16px] -rotate-45" />
+          </FadeInView>
+        </button>
       </div>
     </section>
   );

@@ -17,7 +17,8 @@ const Project = () => {
     <section className="relative w-full min-h-[100vh] h-[100%]">
       <Image
         className="relative -z-1"
-        src={"/images/background2.png"}
+        quality={100}
+        src={"/images/contentsBackground.webp"}
         alt="프로젝트 백그라운드 이미지"
         fill
       />

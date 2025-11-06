@@ -8,12 +8,12 @@ const AboutMe = () => {
   return (
     <section className="relative left-0 top-0 w-full h-[100vh]">
       <Image
-      className="relative left-0 top-0 -z-1"
-        src={"/images/background2.png"}
+        quality={100}
+        className="relative left-0 top-0 -z-1 object-cover object-center"
+        src={"/images/contentsBackground.webp"}
         alt="소개 백그라운드 이미지"
         fill
       />
-
       <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
         <FadeInView className="w-[40%]">
           <h1 className="title-40-black mb-[40px]">

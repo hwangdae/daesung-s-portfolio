@@ -98,8 +98,9 @@ const Skill = () => {
   return (
     <section className="relative w-full">
       <Image
-      className="relative -z-1"
-        src={"/images/background2.png"}
+        className="relative -z-1"
+        quality={100}
+        src={"/images/contentsBackground.webp"}
         alt="사용 기술 백그라운드 이미지"
         fill
       />

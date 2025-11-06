@@ -24,7 +24,6 @@ const EducationCard = ({
     >
       {position === "right" && (
         <div className="relative left-0 top-0">
-          {/* <div className="w-[2px] h-[100%] bg-[#444]"></div> */}
           <div className={`w-[14px] h-[3px] bg-[#444] rounded-full absolute left-1/2  ${index === 0 && "top-[200px]"} ${index === 1 && "top-[80px]"} ${index === 2 && "top-[40px]"} -translate-x-1/2`}></div>
         </div>
       )}
@@ -45,7 +44,6 @@ const EducationCard = ({
       </div>
       {position === "left" && (
         <div className="relative left-0 top-0">
-          {/* <div className="w-[2px] h-[100%] bg-[#444]"></div> */}
           <div className={`w-[14px] h-[3px] bg-[#444] rounded-full absolute left-1/2 ${index === 0 && "top-[200px]"} ${index === 1 && "top-[-280px]"} ${index === 2 && "top-[20px]"} -translate-x-1/2`}></div>
         </div>
       )}
