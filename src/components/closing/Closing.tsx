@@ -3,11 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import Footer from "../footer/Footer";
 import { useScrollRef } from "@/hooks/scrollRef";
 import FadeInView from "../ui/FadeInView";
+import Image from "next/image";
 
 const Closing = () => {
   return (
-    <section className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] relative right-0 top-0">
-      <div className="max-w-[1300px] h-full mx-auto py-[14vh]">
+    <section className="w-full h-[100vh] relative right-0 top-0">
+      <Image src={"/images/hero-backgroundImage.webp"} alt="클로즈 백그라운드 이미지" fill/>
+      <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[14vh]">
         <div className="text-white h-full flex flex-col items-center justify-center text-center">
           <FadeInView className=" mb-16">
             <h1 className="close-42-regular mb-4">봐주셔서 감사합니다</h1>
@@ -36,14 +38,6 @@ const Closing = () => {
             </div>
           </FadeInView>
         </div>
-        {/* <Footer /> */}
-        {/* <FadeInView
-          delay={2}
-          className="absolute right-[200px] top-[80px] z-50 origin-top cursor-pointer block px-5"
-        >
-          <div className="h-[200px] w-[1px] bg-[#444] relative right-0 bottom-0"></div>
-          <div className="h-[20px] w-[1px] bg-[#444] relative right-[7px] top-[16px] -rotate-45" />
-        </FadeInView> */}
       </div>
     </section>
   );

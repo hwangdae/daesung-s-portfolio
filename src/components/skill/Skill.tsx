@@ -13,6 +13,7 @@ import SkillItem from "./SkillItem";
 import { motion } from "motion/react";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
+import Image from "next/image";
 
 const SKILLITEMS = [
   {
@@ -95,8 +96,13 @@ const TOOLITEMS = [
 
 const Skill = () => {
   return (
-    <section className="w-full bg-[url(/images/background2.png)]">
-      <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between flex-col items-start gap-[85px] relative left-0 top-0">
+    <section className="w-full">
+      <Image
+        src={"/images/background2.png"}
+        alt="사용 기술 백그라운드 이미지"
+        fill
+      />
+      <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between flex-col items-start gap-[85px] relative left-0 top-0">
         <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[90px] bg-white"></div>
           <h1 className="title-40-black">
@@ -109,7 +115,7 @@ const Skill = () => {
           <div className="mb-[80px]">
             <FadeInView className="flex items-center gap-4  mb-6">
               <h2 className="title-28-regular">기술</h2>
-              <LineFadeInView className="flex flex-1 h-[1px] bg-[#444444]"/>
+              <LineFadeInView className="flex flex-1 h-[1px] bg-[#444444]" />
             </FadeInView>
             <FadeInView as="ul" className="grid grid-cols-2 gap-5">
               {SKILLITEMS.map((skillItem) => {
@@ -131,7 +137,7 @@ const Skill = () => {
           <div>
             <div className="flex items-center gap-4  mb-6">
               <h2 className="title-28-regular">툴</h2>
-              <LineFadeInView className="flex flex-1 h-[1px] bg-[#444444]"/>
+              <LineFadeInView className="flex flex-1 h-[1px] bg-[#444444]" />
             </div>
             <FadeInView className="grid grid-cols-2 gap-5">
               {TOOLITEMS.map((tollItem) => {

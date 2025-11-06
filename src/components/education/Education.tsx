@@ -2,6 +2,7 @@ import React from "react";
 import EducationCard from "./components/EducationCard";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
+import Image from "next/image";
 
 const EDUCATIONS = [
   {
@@ -40,8 +41,13 @@ const EDUCATIONS = [
 
 const Education = () => {
   return (
-    <section className="relative right-0 top-0 w-full bg-[url(/images/background2.png)]">
-      <div className="max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
+    <section className="relative right-0 top-0 w-full">
+            <Image
+              src={"/images/background2.png"}
+              alt="교육내용 백그라운드 이미지"
+              fill
+            />
+      <div className="relative z-50 max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
         <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[46px] bg-white" />
           <h1 className="title-40-black">학습했던 과정들</h1>

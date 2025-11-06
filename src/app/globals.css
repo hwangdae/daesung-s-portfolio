@@ -6,7 +6,7 @@
 :root {
   --font-blackhan: "blackhan", sans-serif;
   --font-pretendard: "pretendard", sans-serif;
-  --font-notoSans: "notoSans", sans-serif;
+  /* --font-notoSans: "notoSans", sans-serif; */
 }
 
 .noise-bg {
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: var(--font-notoSans);
+  font-family: var(--font-pretendard);
   color: #ffffff;
   background-color: #ddd;
 }

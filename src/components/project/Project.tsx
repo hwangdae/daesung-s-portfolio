@@ -4,6 +4,7 @@ import { AnimatePresence } from "motion/react";
 import ProjectCard from "./components/ProjectCard";
 import { ProjectType } from "@/types/ProjectType";
 import FadeInView from "../ui/FadeInView";
+import Image from "next/image";
 
 const Project = () => {
   const [openProject, setOpenProject] = useState<string[]>([]);
@@ -13,8 +14,13 @@ const Project = () => {
     );
   };
   return (
-    <section className="w-full min-h-[100vh] h-[100%] bg-[url(/images/background2.png)]">
-      <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
+    <section className="w-full min-h-[100vh] h-[100%]">
+            <Image
+              src={"/images/background2.png"}
+              alt="프로젝트 백그라운드 이미지"
+              fill
+            />
+      <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
         <FadeInView className="w-[30%]">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-[8px] h-[90px] bg-white"></div>

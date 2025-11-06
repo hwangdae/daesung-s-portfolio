@@ -1,12 +1,20 @@
 import React from "react";
 import FadeInView from "../ui/FadeInView";
+import Image from "next/image";
 
 const SUBTITLES = ["사용자 경험", "신뢰감", "편의"];
 
 const AboutMe = () => {
   return (
-    <section className="w-full h-[100vh] bg-[url(/images/background2.png)]">
-      <div className="max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
+    <section className="relative left-0 top-0 w-full h-[100vh]">
+      <Image
+      className="relative left-0 top-0 -z-20"
+        src={"/images/background2.png"}
+        alt="소개 백그라운드 이미지"
+        fill
+      />
+
+      <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
         <FadeInView className="w-[40%]">
           <h1 className="title-40-black mb-[40px]">
             당연함을 당연하게

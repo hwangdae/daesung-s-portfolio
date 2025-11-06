@@ -8,18 +8,18 @@ const blackHanSans = Black_Han_Sans({
   weight: "400",
   variable: "--font-blackhan",
   style: "normal",
-  display: "block"
+  // display: "block"
 });
 
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  weight: "variable",
-  variable: "--font-notoSans",
-  style: "normal",
-});
+// const notoSans = Noto_Sans({
+//   subsets: ["latin"],
+//   weight: "variable",
+//   variable: "--font-notoSans",
+//   style: "normal",
+// });
 
 const pretendard = localFont({
-  src: "../fonts/pretendard/pretendardVariable.woff2",
+  src: "../fonts/pretendard/pretendardVariableSubset.woff2",
   variable: "--font-pretendard",
   display: "swap",
 });
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${blackHanSans.variable} ${pretendard.variable} ${notoSans.variable}`}>
+      <body className={`${blackHanSans.variable} ${pretendard.variable}`}>
         {children}
       </body>
     </html>
