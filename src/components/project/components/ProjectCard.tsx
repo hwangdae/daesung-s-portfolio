@@ -24,19 +24,18 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
   return (
     <motion.li
       ref={scrollRef}
-      initial={{ background: "transparent", x: 100, opacity: 0 }}
+      initial={{ background: "transparent", opacity: 0 }}
       animate={{
-        x: inView ? 0 : 100,
-        opacity: inView ? 1 : 0,
         width: isOpen ? "100%" : "auto",
       }}
       whileHover={{
         width: "100%",
-        transition: { duration: 0.6, delay: 0 },
-        transitionEnd: { delay: 0 },
+        transition: { duration: 0.6 },
       }}
       exit={{ width: "auto" }}
-      transition={{ duration: 0.6, delay: 0.3 }}
+      transition={{ duration: 0.6 }}
+      style={{ animationDelay: `${inView && "0.6s"}` }}
+      className={`${inView && "animate-fade-slide-left"}`}
     >
       {/* 타이틀 */}
       <motion.div

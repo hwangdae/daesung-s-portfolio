@@ -13,7 +13,7 @@ module.exports = {
       },
       colors: {
         primaryText: "#11111",
-        primaryWhite : "#c0daee"
+        primaryWhite: "#c0daee",
       },
       zIndex: {
         "-1": "-1",
@@ -39,6 +39,10 @@ module.exports = {
           "0%": { opacity: 0, transform: "scale(0)" },
           "100%": { opacity: 1, transform: "scale(1)" },
         },
+        "fade-slide-left": {
+          "0%": { opacity: 0, transform: "translateX(100px)" },
+          "100%": { opacity: 1, transform: "translateX(0px)" },
+        },
         "fade-slide-right": {
           "0%": { opacity: 0, transform: "translateX(0px)" },
           "100%": { opacity: 1, transform: "translateX(20px)" },
@@ -62,6 +66,7 @@ module.exports = {
         },
       },
       animation: {
+        "fade-slide-left": "fade-slide-left 0.5s ease-in-out forwards",
         "fade-slide-right": "fade-slide-right 0.5s ease-in-out forwards",
         "fade-slide-bottom": "fade-slide-bottom 0.5s ease-in-out forwards",
         "fade-slide-top-out": "fade-slide-top-out 0.5s ease-in-out forwards",
@@ -70,7 +75,7 @@ module.exports = {
         "scale-in-y": "scale-in-y 1s ease-in-out forwards",
         "scale-in-center": "scale-in-center 1s ease-in-out forwards",
         "scale-out-x": "scale-out-x 1s ease-in-out forwards",
-        "scale-out-y" :"scale-out-y 1s ease-in-out forwards",
+        "scale-out-y": "scale-out-y 1s ease-in-out forwards",
       },
     },
   },
