@@ -15,19 +15,19 @@ const AboutMe = () => {
         fill
       />
       <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
-        <FadeInView className="w-[40%]">
+        <FadeInView delay={0.1} className="w-[39%]">
           <h1 className="title-40-black mb-[40px]">
             당연함을 당연하게
             <br />
             프론트엔드 개발자
           </h1>
           <div>
-            <div className="w-[10px] h-[1px] bg-[#ccc] mb-[12px]"></div>
+            <div className="w-[16px] h-[1px] bg-[#ccc] mb-[12px]"></div>
             <ul>
               {SUBTITLES.map((subTitle) => {
                 return (
                   <li key={subTitle}>
-                    <p className="title-20-regular mb-[10px] text-[#ccc]">
+                    <p className="title-24-light mb-[14px] text-[#ccc]">
                       {subTitle}
                     </p>
                   </li>
@@ -36,10 +36,10 @@ const AboutMe = () => {
             </ul>
           </div>
         </FadeInView>
-        <div className="w-[60%] flex justify-end items-end">
+        <div className="w-[61%] flex justify-end items-end">
           <FadeInView
-            className="text-20-light text-[#EEEEEE] !leading-[36px] break-keep"
-            delay={0.4}
+            className="text-20-light text-[rgba(255,255,255,0.7)] !leading-[40px] break-keep"
+            delay={0.2}
           >
             저는 당연함이 사소한 디테일에서 시작된다고 생각합니다. 특별함 보다
             사용자가 당연하게 느낄 수 있는 경험을 위해 끊임없이 고민합니다.

@@ -12,7 +12,7 @@ export const PROJECTS = [
       "노웨잇 서비스는 대학교 축제에서 불필요한 주점 웨이팅, 수기로 작성되는 주문 시스템을 개선하기 위해 만들어졌습니다. 관리자와 사용자 모두 고려한 기획과 설계가 이루어졌으며, 1명의 디자이너와 프론트엔드 3명, 백엔드 2명이 팀을 이루어 기획 및 디자인, 개발을 진행 하였고, 주 2회 오프라인 회의와 Discord, Figma, Swagger를 통해 원활한 소통과 협업을 진행했습니다.",
     tags: ["팀", "사이드"],
     github: "https://github.com/GTable/NoWait_FE",
-    site: "www.nowait.co.kr",
+    site: "https://app.nowait.co.kr",
     detail: NOWAIT_DETAIL,
   },
   {

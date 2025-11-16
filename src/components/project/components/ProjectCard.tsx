@@ -6,7 +6,6 @@ import WorksSection from "./WorksSection";
 import { ProjectType } from "@/types/ProjectType";
 import TroubleShootingSection from "./TroubleShootingSection";
 import { useScrollRef } from "@/hooks/scrollRef";
-import { animate } from "motion";
 import Link from "next/link";
 
 interface PropsType {
@@ -97,14 +96,14 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
               </p>
             </div>
             {/* 사용 기술 */}
-            <TechStackSection techStacks={project.detail?.techStacks} />
+            <TechStackSection techStacks={project.detail.techStacks} />
             {/* 주요 기능 및 특징 */}
-            <FeaturesSection features={project.detail?.features} />
+            <FeaturesSection features={project.detail.features} />
             {/* 작업 기여도 */}
-            <WorksSection works={project.detail?.works} />
+            <WorksSection works={project.detail.works} />
             {/* 트러블슈팅 */}
             <TroubleShootingSection
-              troubleShooting={project.detail!.troubleShooting}
+              troubleShooting={project.detail.troubleShooting}
             />
           </motion.div>
         )}

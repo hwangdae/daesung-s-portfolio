@@ -39,7 +39,7 @@ const FeaturesSection = ({ features }: PropsType) => {
                     openFeatures.includes(i) ? "rotate-180" : ""
                   }`}
                 >
-                  <Arrow2 />
+                  <Arrow2 color="#000" />
                 </button>
               )}
             </div>

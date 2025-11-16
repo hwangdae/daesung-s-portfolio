@@ -1,22 +1,16 @@
 import React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useScrollRef } from "@/hooks/scrollRef";
 
 interface PropType {
-  as?: React.ElementType;
   children: React.ReactNode;
   className?: string;
   delay?: number;
 }
 
-const FadeInView = ({
-  as: Component = "div",
-  children,
-  className,
-  delay = 0.2,
-}: PropType) => {
+const FadeInView = ({ children, className, delay = 0.2 }: PropType) => {
   const { scrollRef, inView } = useScrollRef();
-  const MotionComponent = motion.create(Component);
+
   return (
     <motion.div
       ref={scrollRef}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Black_Han_Sans, Noto_Sans } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 
 const blackHanSans = Black_Han_Sans({
@@ -8,21 +7,21 @@ const blackHanSans = Black_Han_Sans({
   weight: "400",
   variable: "--font-blackhan",
   style: "normal",
-  // display: "block"
+  display: "block",
 });
 
-// const notoSans = Noto_Sans({
-//   subsets: ["latin"],
-//   weight: "variable",
-//   variable: "--font-notoSans",
-//   style: "normal",
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--font-notoSans",
+  style: "normal",
+});
+
+// const pretendard = localFont({
+//   src: "../fonts/pretendard/pretendardVariableSubset.woff2",
+//   variable: "--font-pretendard",
+//   display: "swap",
 // });
-
-const pretendard = localFont({
-  src: "../fonts/pretendard/pretendardVariableSubset.woff2",
-  variable: "--font-pretendard",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${blackHanSans.variable} ${pretendard.variable}`}>
+      <body className={`${blackHanSans.variable} ${notoSans.variable}`}>
         {children}
       </body>
     </html>

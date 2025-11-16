@@ -6,7 +6,7 @@
 :root {
   --font-blackhan: "blackhan", sans-serif;
   --font-pretendard: "pretendard", sans-serif;
-  /* --font-notoSans: "notoSans", sans-serif; */
+  --font-notoSans: "notoSans", sans-serif;
 }
 
 .noise-bg {
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: var(--font-pretendard);
+  font-family: var(--font-notoSans);
   color: #ffffff;
   background-color: #ddd;
 }
@@ -115,6 +115,13 @@ strong {
 .title-24-regular {
   font-size: 24px;
   font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0%;
+}
+
+.title-24-light {
+  font-size: 24px;
+  font-weight: 300;
   line-height: 26px;
   letter-spacing: 0%;
 }

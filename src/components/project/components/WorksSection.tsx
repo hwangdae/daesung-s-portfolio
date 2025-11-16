@@ -1,4 +1,5 @@
 import { ProjectDetailType } from "@/types/ProjectType";
+import Link from "next/link";
 import React from "react";
 import { AiFillAlert } from "react-icons/ai";
 
@@ -15,9 +16,14 @@ const WorksSection = ({ works }: PropsType) => {
       <ul>
         {works?.map((work) => (
           <li key={work.title} className="mb-4">
-            <h1 className="text-17-regular bg-[#333333] px-3 py-2 mb-[14px]">
-              {work.title}
-            </h1>
+            <div className="flex justify-between items-center bg-[#333333] px-3 py-2 mb-[14px]">
+              <h1 className="text-17-regular">{work.title}</h1>
+              {work.blog && (
+                <Link className="text-16-extraLight" target="_blank" href={work.blog || ""}>
+                  BLOG
+                </Link>
+              )}
+            </div>
             <div className="mb-3">
               <div className="flex gap-2 items-center mb-2">
                 <h2 className="text-17-regular whitespace-nowrap text-[#777]">
