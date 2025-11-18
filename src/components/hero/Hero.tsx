@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { ReactTyped } from "react-typed";
 import FadeInView from "../ui/FadeInView";
 import { useScrollRef } from "@/hooks/scrollRef";
+import { motion } from "motion/react";
 
 interface HeroProps {
   onScrollClick: () => void;
@@ -50,41 +51,80 @@ const Hero = ({ onScrollClick }: HeroProps) => {
       ref={heroRef}
       className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] relative right-0 top-0"
     >
-      <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex flex-col justify-between">
-        <div ref={scrollRef}>
-          {inView && (
-            <ReactTyped
-              strings={[`안녕하세요,<br>프론트엔드 개발자<br>황대성 입니다.`]}
-              typeSpeed={85}
-              showCursor={false}
-              className="hero-64-regular text-white text-center"
-            />
-          )}
+      <div className="max-w-[1300px] h-full mx-auto pt-[130px] pb-[80px] flex justify-between">
+        <div className="h-full flex flex-col justify-between">
+          <div ref={scrollRef}>
+            {inView && (
+              <ReactTyped
+                strings={[`안녕하세요,<br>프론트엔드 개발자<br>황대성 입니다.`]}
+                typeSpeed={85}
+                showCursor={false}
+                className="hero-64-regular text-white text-center"
+              />
+            )}
+          </div>
+          <div>
+            <FadeInView delay={2.9}>
+              <div className="w-[14px] h-[1px] bg-[#848484] mb-2" />
+              {ABOUTS.map((about) => {
+                return (
+                  <li key={about}>
+                    <p className="text-17-thin text-[#E0E0E0] mb-1">{about}</p>
+                  </li>
+                );
+              })}
+            </FadeInView>
+          </div>
         </div>
-        <FadeInView delay={2.9}>
-          <div className="w-[14px] h-[1px] bg-[#848484] mb-2" />
-          {ABOUTS.map((about) => {
-            return (
-              <li key={about}>
-                <p className="text-17-thin text-[#E0E0E0] mb-1">{about}</p>
-              </li>
-            );
-          })}
-        </FadeInView>
-        <button
-          onClick={onScrollClick}
-          className="absolute right-[200px] bottom-[80px] z-50 origin-top cursor-pointer block px-5"
-        >
-          {/* <button
-          onClick={onScrollClick}
-          className="absolute right-[200px] bottom-0 z-50 origin-top cursor-pointer block px-5"
-        > */}
-          <FadeInView delay={3}>
-            {/* <div className="h-[100vh] w-[400px] bg-[rgba(255,255,255,0.1)] absolute right-0 bottom-0"></div> */}
-            <div className="h-[80vh] w-[1px] bg-[rgba(255,255,255,0.1)] relative right-0 bottom-0"></div>
-            <div className="h-[20px] w-[1px] bg-[rgba(255,255,255,0.1)] relative right-[7px] bottom-[16px] -rotate-45" />
-          </FadeInView>
-        </button>
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: "-100vh" }}
+            animate={inView && { opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 3 }}
+          >
+            <button
+              onClick={onScrollClick}
+              className="relative -right-[100px] -top-[130px] origin-top cursor-pointer block px-5"
+            >
+              <motion.div
+                animate={{ scaleY: ["100%", "101%", "100%"] }}
+                transition={{
+                  duration: 2.8,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
+              >
+                <div className="absolute right-0 top-0 h-[97vh] w-[300px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
+              </motion.div>
+              {/* <motion.div
+                animate={{ scaleY: ["100%", "101%", "100%"] }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
+              >
+                <div className="absolute right-0 top-0 h-[86vh] w-[340px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
+              </motion.div>
+              <motion.div
+                animate={{ scaleY: ["100%", "101%", "100%"] }}
+                transition={{
+                  duration: 3.3,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
+              >
+                <div className="absolute right-0 top-0 h-[78vh] w-[340px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
+              </motion.div> */}
+            </button>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

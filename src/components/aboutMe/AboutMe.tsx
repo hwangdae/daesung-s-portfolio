@@ -38,7 +38,7 @@ const AboutMe = () => {
         </FadeInView>
         <div className="w-[61%] flex justify-end items-end">
           <FadeInView
-            className="text-20-light text-[rgba(255,255,255,0.7)] !leading-[40px] break-keep"
+            className="text-20-light text-[rgba(255,255,255,0.9)] !leading-[40px] break-keep"
             delay={0.2}
           >
             저는 당연함이 사소한 디테일에서 시작된다고 생각합니다. 특별함 보다
