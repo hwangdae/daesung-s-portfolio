@@ -31,7 +31,7 @@ const WorksSection = ({ works }: PropsType) => {
                 </h2>
                 <div className="w-full h-[1px] bg-[#444]" />
               </div>
-              <p className="text-17-light text-[#e6e6e6] break-keep">
+              <p className="text-17-light text-[#e6e6e6] break-keep whitespace-pre-line">
                 {work.thinking}
               </p>
             </div>
