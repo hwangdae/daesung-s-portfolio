@@ -76,56 +76,30 @@ const Hero = ({ onScrollClick }: HeroProps) => {
             </FadeInView>
           </div>
         </div>
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: "-100vh" }}
-            animate={inView && { opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 3 }}
-          >
-            <button
-              onClick={onScrollClick}
-              className="relative -right-[100px] -top-[130px] origin-top cursor-pointer block px-5"
-            >
-              <motion.div
-                animate={{ scaleY: ["100%", "101%", "100%"] }}
-                transition={{
-                  duration: 2.8,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                  delay: 0.2,
-                }}
-              >
-                <div className="absolute right-0 top-0 h-[97vh] w-[300px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
-              </motion.div>
-              {/* <motion.div
-                animate={{ scaleY: ["100%", "101%", "100%"] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                  delay: 0.2,
-                }}
-              >
-                <div className="absolute right-0 top-0 h-[86vh] w-[340px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
-              </motion.div>
-              <motion.div
-                animate={{ scaleY: ["100%", "101%", "100%"] }}
-                transition={{
-                  duration: 3.3,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  ease: "easeInOut",
-                  delay: 0.2,
-                }}
-              >
-                <div className="absolute right-0 top-0 h-[78vh] w-[340px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
-              </motion.div> */}
-            </button>
-          </motion.div>
-        </div>
       </div>
+      <motion.div
+        initial={{ opacity: 0, y: "-100%" }}
+        animate={inView && { opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 3 }}
+      >
+        <button
+          onClick={onScrollClick}
+          className="absolute right-[100px] top-0 origin-top cursor-pointer block px-5"
+        >
+          <motion.div
+            animate={{ scaleY: ["100%", "103%", "100%"] }}
+            transition={{
+              duration: 2.8,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+              delay: 0.2,
+            }}
+          >
+            <div className="absolute right-0 top-0 h-[97vh] w-[300px] bg-[rgba(255,255,255,0.01)] [clip-path:polygon(0_0,100%_0,100%_96%,50%_100%,0_96%)]"></div>
+          </motion.div>
+        </button>
+      </motion.div>
     </section>
   );
 };

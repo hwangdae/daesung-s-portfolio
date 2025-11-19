@@ -10,7 +10,7 @@ const WorksSection = ({ works }: PropsType) => {
   return (
     <div>
       <div className="flex items-center gap-2 py-[20px]">
-        <AiFillAlert size={"23px"} />
+        <AiFillAlert size={"23px"} color="#e78c1d" />
         <h1 className="title-24-bold">마주한 고민과 해결 과정들</h1>
       </div>
       <ul>
@@ -19,7 +19,11 @@ const WorksSection = ({ works }: PropsType) => {
             <div className="flex justify-between items-center bg-[#2c2c2c] px-3 py-2 mb-[14px]">
               <h1 className="text-17-regular">{work.title}</h1>
               {work.blog && (
-                <Link className="text-16-extraLight" target="_blank" href={work.blog || ""}>
+                <Link
+                  className="text-16-extraLight"
+                  target="_blank"
+                  href={work.blog || ""}
+                >
                   BLOG
                 </Link>
               )}
@@ -31,9 +35,18 @@ const WorksSection = ({ works }: PropsType) => {
                 </h2>
                 <div className="w-full h-[1px] bg-[#444]" />
               </div>
-              <p className="text-17-light text-[#e6e6e6] break-keep whitespace-pre-line">
-                {work.thinking}
-              </p>
+              <ul>
+                {work.thinking.map((thinking, i) => {
+                  return (
+                    <li key={i} className="mb-3 last:mb-0">
+                      <p
+                        className="text-17-light text-[#e6e6e6] break-keep whitespace-pre-line"
+                        dangerouslySetInnerHTML={{ __html: thinking }}
+                      ></p>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
             <div>
               <div className="flex gap-2 items-center mb-2">
@@ -42,10 +55,18 @@ const WorksSection = ({ works }: PropsType) => {
                 </h2>
                 <div className="w-full h-[1px] bg-[#444]" />
               </div>
-              <p
-                className="text-17-light text-[#e6e6e6] break-keep"
-                dangerouslySetInnerHTML={{ __html: work.description }}
-              ></p>
+              <ul>
+                {work.description.map((description, i) => {
+                  return (
+                    <li key={i} className="mb-3 last:mb-0">
+                      <p
+                        className="text-17-light text-[#d5d5d5] break-keep"
+                        dangerouslySetInnerHTML={{ __html: description }}
+                      ></p>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </li>
         ))}

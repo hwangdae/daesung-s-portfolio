@@ -18,8 +18,8 @@ export interface ProjectDetailType {
   techStacks: { title: string; description: string }[];
   works: {
     title: string;
-    thinking: string;
-    description: string;
+    thinking: string[];
+    description: string[];
     blog?: string;
   }[];
   troubleShooting: {
