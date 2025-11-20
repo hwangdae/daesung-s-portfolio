@@ -64,7 +64,7 @@ export const NOWAIT_DETAIL = {
         "처음에는 React Query의 invalidateQueries를 사용하여 북마크 기능을 구현했지만, QA 테스트 과정에서 API 응답 이후에만 UI가 업데이트되어 사용자가 버튼을 눌렀을 때 즉각적인 반응이 없는 문제가 확인되었습니다. 이로 인해 사용자 경험이 저하될 우려가 있었습니다.",
       ],
       description: [
-        "ReactQuery의 setQueryData를 활용하여 사용자가 북마크 버튼을 클릭하면, API 응답을 기다리지 않고 즉시 UI에 반영하는 <strong>낙관적 업데이트를 구현하여 사용자 경험을 개선</strong>했습니다. 요청 실패 상황에서도 롤백을 통해 데이터가 꼬이지 않도록 처리했습니다.",
+        "ReactQuery의 setQueryData를 활용하여 사용자가 북마크 버튼을 클릭하면, <strong>API 응답을 기다리지 않고 즉시 UI에 반영하는 낙관적 업데이트를 구현하여 사용자 경험을 개선</strong>했습니다. 요청 실패 상황에서도 롤백을 통해 데이터가 꼬이지 않도록 처리했습니다.",
       ],
     },
     {

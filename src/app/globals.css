@@ -28,8 +28,10 @@ body {
 }
 
 strong {
-  color: #dcdcdc;
-  font-weight: 400;
+  /* color: #f7f7f7; */
+  color: #bbc3f3;
+
+  font-weight: 300;
 }
 
 .beforeClass {
@@ -193,21 +195,21 @@ strong {
 .text-17-bold {
   font-size: 17px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 23px;
   letter-spacing: 0;
 }
 
 .text-17-regular {
   font-size: 17px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 23px;
   letter-spacing: 0;
 }
 
 .text-17-light {
   font-size: 17px;
   font-weight: 300;
-  line-height: 22px;
+  line-height: 23px;
   letter-spacing: 0.02em;
 }
 

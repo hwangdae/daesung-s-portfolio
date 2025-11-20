@@ -40,7 +40,7 @@ const WorksSection = ({ works }: PropsType) => {
                   return (
                     <li key={i} className="mb-3 last:mb-0">
                       <p
-                        className="text-17-light text-[#e6e6e6] break-keep whitespace-pre-line"
+                        className="text-17-light text-[#d5d5d5] break-keep whitespace-pre-line"
                         dangerouslySetInnerHTML={{ __html: thinking }}
                       ></p>
                     </li>
