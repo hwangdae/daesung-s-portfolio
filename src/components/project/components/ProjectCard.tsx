@@ -43,7 +43,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
           width: isOpen ? "100%" : "auto",
         }}
         className={`border-b border-[#444444] px-8 py-8 cursor-pointer flex items-center ${
-          isOpen ? "bg-[#111111]" : "bg-transparent"
+          isOpen ? "bg-[#161616]" : "bg-transparent"
         }`}
       >
         <div className="w-full flex justify-between items-start">

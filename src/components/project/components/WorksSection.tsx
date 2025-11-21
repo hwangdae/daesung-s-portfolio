@@ -9,9 +9,30 @@ interface PropsType {
 const WorksSection = ({ works }: PropsType) => {
   return (
     <div>
-      <div className="flex items-center gap-2 py-[20px]">
-        <AiFillAlert size={"23px"} color="#e78c1d" />
-        <h1 className="title-24-bold">마주한 고민과 해결 과정들</h1>
+      <div className="flex items-end justify-between gap-2 py-[20px]">
+        <div className="flex items-center gap-2">
+          <AiFillAlert size={"23px"}
+          //  color="#e78c1d" 
+           />
+          <h1 className="title-24-bold">마주한 고민과 해결 과정들</h1>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5">
+            <h2 className="text-[#555555]">＊마주한 고민과</h2>
+            <div className="flex items-center">
+              <span className="w-4 h-4 bg-[#f7b5b9] rounded-sm"></span>
+              {/* <h3>#429696</h3> */}
+            </div>
+          </div>
+          {/* <span className="text-[#555555]">l</span> */}
+          <div className="flex items-center gap-1.5">
+            <h2 className="text-[#555555]">＊해결 과정들</h2>
+            <div className="flex items-center">
+              <span className="w-4 h-4 bg-[#BBC3F3] rounded-sm"></span>
+              {/* <h3>#429696</h3> */}
+            </div>
+          </div>
+        </div>
       </div>
       <ul>
         {works?.map((work) => (

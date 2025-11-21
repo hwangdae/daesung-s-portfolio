@@ -11,7 +11,9 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
   return (
     <div>
       <div className="flex items-center gap-2 py-[20px]">
-        <AiFillBug size={"23px"} color="#be0029"/>
+        <AiFillBug size={"23px"}
+        //  color="#be004986"
+         />
         <h1 className="title-24-bold">트러블 슈팅</h1>
       </div>
 

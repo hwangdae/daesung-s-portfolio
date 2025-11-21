@@ -10,7 +10,9 @@ const TechStackSection = ({ techStacks }: PropsType) => {
   return (
     <div>
       <div className="flex items-center gap-2 py-[20px]">
-        <AiFillFolderOpen size={"23px"} color="#FFD76A"/>
+        <AiFillFolderOpen size={"23px"}
+        //  color="#FFD76A"
+         />
         <h1 className="title-24-bold">사용 기술 및 언어</h1>
       </div>
       <ul className="flex flex-wrap gap-2">
