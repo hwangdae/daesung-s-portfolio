@@ -46,7 +46,7 @@ export const NOWAIT_DETAIL = {
         "<b>LocalStorage를 사용하면서 상태가 변경될 때마다 데이터 동기화 코드를 작성해야 하고, JSON 직렬화와 파싱까지 수동으로 처리해야 하는 비효율적인 코드가 발생</b>했습니다.",
       ],
       description: [
-        "<strong>Zustand의 persist 미들웨어를 적용하여 상태 데이터와 LocalStorage의 데이터 동기화를 자동화</strong>함으로써, 데이터 불일치로 인한 오류를 최소화 하고 코드의 유지보수성을 향상시켰습니다.",
+        "<strong>Zustand의 persist 미들웨어를 적용하여 상태 데이터와 LocalStorage의 데이터 동기화를 자동화</strong>함으로써, <strong>데이터 불일치로 인한 오류를 최소화 하고 코드의 유지보수성을 향상</strong>시켰습니다.",
       ],
     },
     {

@@ -107,10 +107,10 @@ export const MYSELECTSHOP_DETAIL = {
       cause: {
         title: "원인",
         contents: [
-          "React에서 useQuery는 비동기 함수로 데이터를 fetch함.",
-          "useQuery가 호출되는 시점은 useEffect보다 먼저 이지만, 실제 데이터 fetch는 비동기이기 때문에 데이터가 도착하기 전까지는 빈 값 또는 초기값을 갖는다.",
-          "그 결과, 데이터를 fetch하는 동안 useEffect가 먼저 실행되어 데이터가 아직 없는 상태일 수 있음.",
-          "따라서, useEffect 내부에서 data를 바로 사용하면 undefined 참조 오류나 의도치 않은 동작이 발생할 수 있음.",
+          "React에서 useQuery는 비동기 함수로 데이터를 fetch합니다.",
+          "useQuery가 호출되는 시점은 useEffect보다 먼저 이지만, 실제 데이터 fetch는 비동기이기 때문에 데이터가 도착하기 전까지는 빈 값 또는 초기값을 갖습니다.",
+          "그 결과, 데이터를 fetch하는 동안 useEffect가 먼저 실행되어 데이터가 아직 없는 상태일 가능성이 있어서",
+          "useEffect 내부에서 data를 바로 사용하면 undefined 참조 오류나 의도치 않은 동작이 발생할 가능성이 있었습니다.",
           "useQuery는 호출 시점은 빠르지만, 실제 데이터 fetch는 비동기로 처리되므로 useEffect 실행 시점에는 아직 데이터가 존재하지 않을 수 있습니다. 이로 인해 데이터 의존 로직이 빈 값 상태에서 실행되었습니다.",
         ],
       },

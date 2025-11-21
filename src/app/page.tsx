@@ -6,6 +6,7 @@ import Skill from "@/components/skill/Skill";
 import Project from "@/components/project/Project";
 import Education from "@/components/education/Education";
 import { useRef } from "react";
+import Flower from "@/assets/flower.svg"
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -15,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="relative top-0 right-0">
       <Hero onScrollClick={scrollToAbout} />
       <div ref={aboutRef}>
         <AboutMe />
@@ -24,6 +25,9 @@ export default function Home() {
       <Project />
       <Education />
       <Closing />
+      {/* <span className="w-[50px] h-[50px] absolute right-0 top-0 z-50">
+      <Flower width="50px" height="50px"/>
+      </span> */}
     </div>
   );
 }
