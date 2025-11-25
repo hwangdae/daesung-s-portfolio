@@ -7,7 +7,6 @@ const blackHanSans = Black_Han_Sans({
   weight: "400",
   variable: "--font-blackhan",
   style: "normal",
-  display: "block",
 });
 
 const notoSans = Noto_Sans({

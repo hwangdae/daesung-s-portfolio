@@ -7,6 +7,11 @@ import { ProjectType } from "@/types/ProjectType";
 import TroubleShootingSection from "./TroubleShootingSection";
 import { useScrollRef } from "@/hooks/scrollRef";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
 
 interface PropsType {
   project: ProjectType;
@@ -20,6 +25,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.stopPropagation();
   };
+
   return (
     <motion.li
       ref={scrollRef}
@@ -90,11 +96,35 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* 프로젝트 설명 */}
             <div className="mt-4">
               <p className="text-17-light text-[#eeeeee] break-keep">
                 {project.subDescription}
               </p>
             </div>
+            {/* 프로젝트 프리뷰 */}
+            <Swiper
+              spaceBetween={10}
+              slidesPerView={4.5}
+              loop={true} // 무한 루프
+              autoplay={{ delay: 1, disableOnInteraction: false }}
+              modules={[Autoplay, Pagination, Navigation]}
+              speed={2000} // 이동 속도
+            >
+              {project.preview?.map((preview) => {
+                return (
+                  <SwiperSlide key={preview.src}>
+                    <img
+                      width={187}
+                      height={450}
+                      src={preview.src || ""}
+                      className="object-contain"
+                      alt="프리뷰 이미지"
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
             {/* 사용 기술 */}
             <TechStackSection techStacks={project.detail.techStacks} />
             {/* 주요 기능 및 특징 */}

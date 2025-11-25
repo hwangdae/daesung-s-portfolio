@@ -1,8 +1,11 @@
+import { StaticImageData } from "next/image";
+
 export interface ProjectType {
   id: string;
   title: string;
   description: string;
   subDescription: string;
+  preview?: { src: string }[];
   tags: string[];
   github: string;
   site?: string;
@@ -22,7 +25,7 @@ export interface ProjectDetailType {
     description: string[];
     blog?: string;
   }[];
-  troubleShooting: {
+  troubleShooting?: {
     id: string;
     title: string;
     trouble: {

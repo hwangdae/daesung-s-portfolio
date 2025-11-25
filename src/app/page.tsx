@@ -5,8 +5,9 @@ import Hero from "@/components/hero/Hero";
 import Skill from "@/components/skill/Skill";
 import Project from "@/components/project/Project";
 import Education from "@/components/education/Education";
-import { useRef } from "react";
-import Flower from "@/assets/flower.svg"
+import { useEffect, useRef, useState } from "react";
+import Flower from "@/assets/flower.svg";
+import { motion } from "motion/react";
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -14,6 +15,26 @@ export default function Home() {
   const scrollToAbout = () => {
     aboutRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [percentage, setPercentage] = useState(0);
+  console.log(percentage)
+  
+  const getScrollPercentage = () => {
+    const scroll = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    const viewport = scrollHeight - clientHeight;
+    const percentage = (scroll / viewport) * 100;
+
+    return setPercentage(Math.floor(percentage));
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", getScrollPercentage);
+
+    return () => window.removeEventListener("scroll", getScrollPercentage);
+  }, []);
 
   return (
     <div className="relative top-0 right-0">
@@ -25,9 +46,15 @@ export default function Home() {
       <Project />
       <Education />
       <Closing />
-      {/* <span className="w-[50px] h-[50px] absolute right-0 top-0 z-50">
-      <Flower width="50px" height="50px"/>
-      </span> */}
+      {/* <div className="fixed right-[170px] top-[85vh] z-50">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+          className="flex justify-center items-start"
+        >
+          <Flower />
+        </motion.div>
+      </div> */}
     </div>
   );
 }
