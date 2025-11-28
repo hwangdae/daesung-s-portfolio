@@ -97,10 +97,19 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
             exit={{ opacity: 0 }}
           >
             {/* 프로젝트 설명 */}
-            <div className="mt-4">
-              <p className="text-17-light text-[#eeeeee] break-keep">
-                {project.subDescription}
-              </p>
+            <div>
+              <div className="flex items-center gap-2 py-[20px]">
+                {/* <AiFillFolderOpen
+                  size={"23px"}
+                  //  color="#FFD76A"
+                /> */}
+                <h1 className="title-24-bold">프로젝트에 대하여</h1>
+              </div>
+              <div className="mt-4">
+                <p className="text-17-light text-[#eeeeee] break-keep">
+                  {project.subDescription}
+                </p>
+              </div>
             </div>
             {/* 프로젝트 프리뷰 */}
             <Swiper
@@ -114,6 +123,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
               {project.preview?.map((preview) => {
                 return (
                   <SwiperSlide key={preview.src}>
+                    {/* <motion.p animate={{scale : 2}}> */}
                     <img
                       width={187}
                       height={450}
@@ -121,6 +131,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
                       className="object-contain"
                       alt="프리뷰 이미지"
                     />
+                    {/* </motion.p> */}
                   </SwiperSlide>
                 );
               })}
