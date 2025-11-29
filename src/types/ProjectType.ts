@@ -5,7 +5,7 @@ export interface ProjectType {
   title: string;
   description: string;
   subDescription: string;
-  preview?: { src: string }[];
+  preview?: { id: number; src: StaticImageData; title: string }[];
   tags: string[];
   github: string;
   site?: string;

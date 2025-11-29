@@ -12,7 +12,9 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-
+import { FaDesktop } from "react-icons/fa6";
+import { MdDesktopMac } from "react-icons/md";
+import { LuNotebookText } from "react-icons/lu";
 interface PropsType {
   project: ProjectType;
   isOpen: boolean;
@@ -74,6 +76,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
                 GITHUB
               </Link>
               <span className="text-[#ccc] pb-[3px]">|</span>
+              {project.site ? 
               <Link
                 onClick={handleClick}
                 target="_blank"
@@ -81,7 +84,7 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
                 className="text-16-extraLight"
               >
                 SITE
-              </Link>
+              </Link> : <p className="text-16-extraLight">운영종료</p>}
             </motion.div>
           )}
         </div>
@@ -99,43 +102,49 @@ const ProjectCard = ({ project, isOpen, onToggle }: PropsType) => {
             {/* 프로젝트 설명 */}
             <div>
               <div className="flex items-center gap-2 py-[20px]">
-                {/* <AiFillFolderOpen
+                <LuNotebookText
                   size={"23px"}
                   //  color="#FFD76A"
-                /> */}
+                />
                 <h1 className="title-24-bold">프로젝트에 대하여</h1>
               </div>
-              <div className="mt-4">
-                <p className="text-17-light text-[#eeeeee] break-keep">
-                  {project.subDescription}
-                </p>
-              </div>
+              <p className="text-17-light text-[#eeeeee] break-keep">
+                {project.subDescription}
+              </p>
             </div>
             {/* 프로젝트 프리뷰 */}
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={4.5}
-              loop={true} // 무한 루프
-              autoplay={{ delay: 1, disableOnInteraction: false }}
-              modules={[Autoplay, Pagination, Navigation]}
-              speed={2000} // 이동 속도
-            >
-              {project.preview?.map((preview) => {
-                return (
-                  <SwiperSlide key={preview.src}>
-                    {/* <motion.p animate={{scale : 2}}> */}
-                    <img
-                      width={187}
-                      height={450}
-                      src={preview.src || ""}
-                      className="object-contain"
-                      alt="프리뷰 이미지"
-                    />
-                    {/* </motion.p> */}
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
+            <div>
+              <div className="flex items-center gap-2 py-[20px]">
+                <FaDesktop
+                  size={"21px"}
+                  //  color="#FFD76A"
+                />
+                <h1 className="title-24-bold">프로젝트 미리보기</h1>
+              </div>
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={4}
+                loop={true} // 무한 루프
+                autoplay={{ delay: 1, disableOnInteraction: false }}
+                modules={[Autoplay, Pagination, Navigation]}
+                speed={3000} // 이동 속도
+              >
+                {project.preview?.map((preview) => {
+                  return (
+                    <SwiperSlide key={preview.id}>
+                      <p className="text-16-regular text-center mb-2">{preview.title}</p>
+                      <Image
+                        width={207}
+                        height={470}
+                        src={preview.src || ""}
+                        className="object-contain"
+                        alt="프리뷰 이미지"
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
             {/* 사용 기술 */}
             <TechStackSection techStacks={project.detail.techStacks} />
             {/* 주요 기능 및 특징 */}
