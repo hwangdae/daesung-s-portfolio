@@ -17,7 +17,6 @@ export default function Home() {
   };
 
   const [percentage, setPercentage] = useState(0);
-  console.log(percentage)
   
   const getScrollPercentage = () => {
     const scroll = document.documentElement.scrollTop;

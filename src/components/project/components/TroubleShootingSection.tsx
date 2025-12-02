@@ -7,16 +7,18 @@ interface PropsType {
 }
 
 const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
-  console.log(troubleShooting);
+
   return (
     <div>
-      <div className="flex items-center gap-2 py-[20px]">
-        <AiFillBug size={"23px"}
-        //  color="#be004986"
-         />
-        <h1 className="title-24-bold">트러블 슈팅</h1>
-      </div>
-
+      {troubleShooting !== undefined && (
+        <div className="flex items-center gap-2 py-[20px]">
+          <AiFillBug
+            size={"23px"}
+            //  color="#be004986"
+          />
+          <h1 className="title-24-bold">트러블 슈팅</h1>
+        </div>
+      )}
       <div>
         {troubleShooting?.map((troubleShooting) => (
           <div key={troubleShooting.id} className="mb-4">
@@ -35,7 +37,9 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
               {troubleShooting.trouble.contents.map((content, i) => {
                 return (
                   <li key={i}>
-                    <p className="text-17-light text-[#eeeeee] break-keep">{content}</p>
+                    <p className="text-17-light text-[#eeeeee] break-keep">
+                      {content}
+                    </p>
                   </li>
                 );
               })}
@@ -48,7 +52,14 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
             </div>
             <ul className="mb-3">
               {troubleShooting.cause.contents.map((content, i) => {
-                return <li key={i}> <p className="text-17-light text-[#eeeeee] break-keep">{content}</p></li>;
+                return (
+                  <li key={i}>
+                    {" "}
+                    <p className="text-17-light text-[#eeeeee] break-keep">
+                      {content}
+                    </p>
+                  </li>
+                );
               })}
             </ul>
             <div className="flex gap-2 items-center mb-2">
@@ -59,7 +70,14 @@ const TroubleShootingSection = ({ troubleShooting }: PropsType) => {
             </div>
             <ul className="mb-3">
               {troubleShooting.solution.contents.map((content, i) => {
-                return <li key={i}> <p className="text-17-light text-[#eeeeee] break-keep">{content}</p></li>;
+                return (
+                  <li key={i}>
+                    {" "}
+                    <p className="text-17-light text-[#eeeeee] break-keep">
+                      {content}
+                    </p>
+                  </li>
+                );
               })}
             </ul>
           </div>

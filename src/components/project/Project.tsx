@@ -5,13 +5,24 @@ import ProjectCard from "./components/ProjectCard";
 import { ProjectType } from "@/types/ProjectType";
 import FadeInView from "../ui/FadeInView";
 import Image from "next/image";
+import Modal from "../ui/Modal";
 
 const Project = () => {
   const [openProject, setOpenProject] = useState<string[]>([]);
+  const [modalProject, setModalProject] = useState<boolean>(false);
+  console.log(modalProject, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
   const toggleDetail = (title: string) => {
     setOpenProject((prev) =>
       prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
     );
+  };
+
+  const openModal = () => {
+    setModalProject(true);
+  };
+
+  const closeModal = () => {
+    setModalProject(false);
   };
   return (
     <section className="relative w-full min-h-[100vh] h-[100%]">
@@ -45,11 +56,15 @@ const Project = () => {
                   project={project}
                   isOpen={openProject.includes(project.title)}
                   onToggle={() => toggleDetail(project.title)}
+                  modalProject={modalProject}
+                  onOpenModal={openModal}
                 />
               );
             })}
           </AnimatePresence>
         </ul>
+          <Modal open={modalProject} onClose={closeModal}/>
+
       </div>
     </section>
   );

@@ -12,7 +12,7 @@ const Closing = () => {
         alt="클로즈 백그라운드 이미지"
         fill
       />
-      <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[14vh]">
+      <div className="relative z-40 max-w-[1300px] h-full mx-auto py-[14vh]">
         <div className="text-white h-full flex flex-col items-center justify-center text-center">
           <FadeInView className=" mb-16">
             <h1 className="close-42-regular mb-4">봐주셔서 감사합니다.</h1>

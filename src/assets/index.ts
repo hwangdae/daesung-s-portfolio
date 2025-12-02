@@ -16,4 +16,5 @@ export { default as Wave } from "./Wave.svg";
 export { default as ArrowDown } from "./Arrow_down.svg";
 export { default as Arrow } from "./Arrow.svg";
 export { default as Arrow2 } from "./Arrow2.svg";
-
+export { default as Daisy } from "./daisy.svg";
+export { default as NotFound } from "./notFound.svg";

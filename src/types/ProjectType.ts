@@ -9,7 +9,7 @@ export interface ProjectType {
   tags: string[];
   github: string;
   site?: string;
-  detail: ProjectDetailType;
+  detail?: ProjectDetailType;
 }
 
 export interface ProjectDetailType {

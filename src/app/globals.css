@@ -44,6 +44,15 @@ strong {
   left: 0px;
   top: 0px;
 }
+
+.hidden-modal {
+  font-family: var(--font-blackhan);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 42px;
+  letter-spacing: 0em;
+}
+
 /* 히어로 */
 .hero-64-regular {
   font-family: var(--font-blackhan);
@@ -168,6 +177,13 @@ strong {
   letter-spacing: 0.02em;
 }
 
+.text-20-bold {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+
 .text-20-light {
   font-size: 20px;
   font-weight: 300;
@@ -256,6 +272,20 @@ strong {
   font-size: 16px;
   font-weight: 200;
   line-height: 19px;
+  letter-spacing: -0.01em;
+}
+
+.text-15-regular {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+}
+
+.text-14-regular {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
   letter-spacing: -0.01em;
 }
 

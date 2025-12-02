@@ -49,7 +49,7 @@ const Education = () => {
         alt="교육내용 백그라운드 이미지"
         fill
       />
-      <div className="relative z-50 max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
+      <div className="relative z-40 max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
         <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[46px] bg-white" />
           <h1 className="title-40-black">학습했던 과정들</h1>
