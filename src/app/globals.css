@@ -184,6 +184,13 @@ strong {
   letter-spacing: 0px;
 }
 
+.text-20-regular {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0px;
+}
+
 .text-20-light {
   font-size: 20px;
   font-weight: 300;
@@ -196,6 +203,13 @@ strong {
   font-weight: 200;
   line-height: 26px;
   letter-spacing: 0px;
+}
+
+.text-18-regular {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.02em;
 }
 
 .text-18-light {

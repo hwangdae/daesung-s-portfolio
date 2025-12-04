@@ -36,7 +36,7 @@ export const NOWAIT_DETAIL = {
     { title: "TypeScript", description: "" },
     { title: "Axios", description: "" },
     { title: "Zustand", description: "" },
-    { title: "KakaoMapAPI", description: "" },
+    { title: "NaverMapAPI", description: "" },
     { title: "Tailwind", description: "" },
   ],
   works: [

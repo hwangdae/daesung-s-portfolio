@@ -1,3 +1,4 @@
+import useAboutStore, { useEducationStore } from "@/atoms/daisyState";
 import FadeInView from "@/components/ui/FadeInView";
 import React from "react";
 
@@ -16,6 +17,7 @@ const EducationCard = ({
   position,
   index,
 }: PropsType) => {
+
   return (
     <FadeInView
       className={`flex flex-1 gap-[24px] ${
@@ -24,10 +26,19 @@ const EducationCard = ({
     >
       {position === "right" && (
         <div className="relative left-0 top-0">
-          <div className={`w-[14px] h-[3px] bg-[#444] rounded-full absolute left-1/2  ${index === 0 && "top-[200px]"} ${index === 1 && "top-[80px]"} ${index === 2 && "top-[40px]"} -translate-x-1/2`}></div>
+          <div
+            className={`w-[14px] h-[3px] bg-[#444] rounded-full absolute left-1/2  ${
+              index === 0 && "top-[120px]"
+            } ${index === 1 && "top-[230px]"} -translate-x-1/2`}
+          ></div>
         </div>
       )}
-      <div className={`relative bg-[#272727] px-[20px] py-[26px] max-w-[430px] ${index === 0 && "top-[60px]"} ${index === 1 && "top-[-60px]"} ${index === 2 && "top-[-100px]"}`}>
+      {/* 카드 */}
+      <div
+        className={`relative bg-[#272727] px-[20px] py-[26px] min-w-[430px] max-w-[430px] ${
+          index === 0 && "top-[60px]"
+        } ${index === 1 && "top-[100px]"} ${index === 2 && "top-[-50px]"}`}
+      >
         <div className="mb-[36px]">
           <h1 className="title-22-bold mb-2">{title}</h1>
           <p className="text-14-light text-[#ccc]">{period}</p>
@@ -44,7 +55,11 @@ const EducationCard = ({
       </div>
       {position === "left" && (
         <div className="relative left-0 top-0">
-          <div className={`w-[14px] h-[3px] bg-[#444] rounded-full absolute left-1/2 ${index === 0 && "top-[200px]"} ${index === 1 && "top-[-280px]"} ${index === 2 && "top-[20px]"} -translate-x-1/2`}></div>
+          <div
+            className={`w-[14px] h-[3px] bg-[#444] rounded-full absolute left-1/2 ${
+              index === 0 && "top-[160px]"
+            } ${index === 2 && "top-[60px]"} -translate-x-1/2`}
+          ></div>
         </div>
       )}
     </FadeInView>

@@ -3,6 +3,8 @@ import EducationCard from "./components/EducationCard";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
 import Image from "next/image";
+import { useEducationStore } from "@/atoms/daisyState";
+import RightFadeInView from "../ui/RightFadeInView";
 
 const EDUCATIONS = [
   {
@@ -16,6 +18,16 @@ const EDUCATIONS = [
       "디자이너와의 협업을 통해 UI/UX 시안을 구현",
     ],
   },
+  // {
+  //   id: "crossDesign",
+  //   title: "크로스디자인그룹주식회사",
+  //   period: "2022.07.25 - 2023.04.15",
+  //   contents: [
+  //     "워드프레스를 활용한 홈페이지 제작 및 유지보수",
+  //     "Photoshop을 활용해 간단한 이미지 편집",
+  //     "Media Query를 활용한 반응형 웹 구현",
+  //   ],
+  // },
   {
     id: "uiux",
     title: "UI/UX 반응형 웹디자인&웹퍼블리셔",
@@ -40,6 +52,8 @@ const EDUCATIONS = [
 ];
 
 const Education = () => {
+  const { education } = useEducationStore();
+
   return (
     <section className="relative right-0 top-0 w-full">
       <Image
@@ -56,6 +70,37 @@ const Education = () => {
         </FadeInView>
         <div className="relative right-0 top-0 flex flex-col justify-center w-[70%] h-full mt-[120px]">
           <ul className="h-full">
+            {education && (
+              <RightFadeInView className="absolute right-0 top-[-130px]">
+                <div
+                  className={`w-[14px] h-[3px] bg-[#444] rounded-full relative right-[32px] top-[360px]`}
+                />
+                <div className="flex justify-end">
+                  <div className="relative right-0 top-[250px] bg-[#272727] px-[20px] py-[26px] min-w-[430px] max-w-[430px]">
+                    <div className="mb-[36px]">
+                      <h1 className="title-22-bold mb-2">
+                        크로스디자인그룹주식회사
+                      </h1>
+                      <p className="text-14-light text-[#ccc]">
+                        2022.07.25 - 2023.04.15
+                      </p>
+                    </div>
+                    <ul className="ml-5 list-disc break-keep">
+                      <li className="text-16-light last:mb-0 mb-2 text-[#ccc]">
+                        워드프레스를 활용한 홈페이지 제작 및 유지보수
+                      </li>
+                      <li className="text-16-light last:mb-0 mb-2 text-[#ccc]">
+                        Photoshop을 활용한 간단한 이미지 제작 및 편집
+                      </li>
+                      <li className="text-16-light last:mb-0 mb-2 text-[#ccc]">
+                        Media Query를 활용한 반응형 웹 구현
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </RightFadeInView>
+            )}
+
             {EDUCATIONS.map((education, i) => {
               return (
                 <EducationCard
@@ -69,6 +114,7 @@ const Education = () => {
               );
             })}
           </ul>
+
           <LineFadeInView
             position="y"
             className="absolute right-[454px] top-0 w-[2px] h-[100%] bg-[#444]"

@@ -6,18 +6,17 @@ import Skill from "@/components/skill/Skill";
 import Project from "@/components/project/Project";
 import Education from "@/components/education/Education";
 import { useEffect, useRef, useState } from "react";
-import Flower from "@/assets/flower.svg";
-import { motion } from "motion/react";
+import Daisy from "@/components/shared/Daisy";
 
 export default function Home() {
-  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
-  const scrollToAbout = () => {
-    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const scrollToAbout = () => {
+  //   aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   const [percentage, setPercentage] = useState(0);
-  
+  console.log(percentage);
   const getScrollPercentage = () => {
     const scroll = document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
@@ -37,7 +36,7 @@ export default function Home() {
 
   return (
     <div className="relative top-0 right-0">
-      <Hero onScrollClick={scrollToAbout} />
+      <Hero />
       <div ref={aboutRef}>
         <AboutMe />
       </div>
@@ -45,15 +44,7 @@ export default function Home() {
       <Project />
       <Education />
       <Closing />
-      {/* <div className="fixed right-[170px] top-[85vh] z-50">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-          className="flex justify-center items-start"
-        >
-          <Flower />
-        </motion.div>
-      </div> */}
+      <Daisy aboutRef={aboutRef} percentage={percentage} />
     </div>
   );
 }
