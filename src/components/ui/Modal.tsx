@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Daisy, NotFound } from "@/assets/index";
-import Image from "next/image";
 import { useEffect } from "react";
+
 export default function Modal({
   open,
   onClose,
@@ -24,13 +23,6 @@ export default function Modal({
   return (
     <AnimatePresence>
       {open && (
-        // <motion.div
-        //   className="fixed inset-0 bg-black backdrop-blur-sm flex items-center justify-center z-[100]"
-        //   initial={{ opacity: 0 }}
-        //   animate={{ opacity: 1 }}
-        //   exit={{ opacity: 0 }}
-        //   onClick={onClose}
-        // >
           <motion.div
             className="fixed inset-0 flex items-center justify-center bg-[#000000] rounded-sm p-14"
             initial={{ scale: 0.8, opacity: 0 }}
@@ -39,14 +31,15 @@ export default function Modal({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col items-center gap-4">
-              <NotFound />
+              {/* <NotFound /> */}
+              <h1 className="notFound-100-regular">404</h1>
               <div className="mt-7 mb-4">
                 <h1 className="title-24-bold mb-4">
                   Oops, You're Already Here.
                 </h1>
                 <p
                   id="egg-desc"
-                  className="text-17-regular text-center !leading-6"
+                  className="text-18-light text-center !leading-7"
                 >
                   포트폴리오 안의 포트폴리오를 보려는
                   <br />
@@ -62,7 +55,6 @@ export default function Modal({
               </button>
             </div>
           </motion.div>
-        // </motion.div>
       )}
     </AnimatePresence>
   );

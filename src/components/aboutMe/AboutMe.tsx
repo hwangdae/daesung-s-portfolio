@@ -6,24 +6,22 @@ import useAboutStore from "@/atoms/daisyState";
 import { AnimatePresence, motion } from "motion/react";
 
 const SUBTITLES = ["사용자 경험", "신뢰감", "편의"];
-const HOBBIES = ["스노우보드", "게임", "집"];
+const HOBBIES = ["스노우보드", "게임"];
 
 const AboutMe = () => {
   const { about } = useAboutStore();
   console.log(about);
   return (
     <section
-      className={`relative left-0 top-0 w-full h-[100vh] transition-colors duration-700 ease-in-out ${
-        about ? "bg-[#314455]" : "bg-[#181818]"
-      }`}
+      className={`relative left-0 top-0 w-full h-[100vh] transition-colors duration-700 ease-in-out`}
     >
-      {/* <Image
+      <Image
         quality={100}
         className="relative left-0 top-0 -z-1 object-cover object-center"
         src={"/images/contentsBackground.webp"}
         alt="소개 백그라운드 이미지"
         fill
-      /> */}
+      />
       <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
         <FadeInView delay={0.1} className="w-[39%]">
           <AnimatePresence mode="wait">
@@ -36,7 +34,7 @@ const AboutMe = () => {
                 transition={{ duration: 0.4 }}
               >
                 <h1 className="title-40-black mb-[40px]">
-                  집을 좋아하는
+                  <span className="text-[#f7aa47]">집</span>을 좋아하는
                   <br />
                   프론트엔드 개발자
                 </h1>
@@ -102,12 +100,12 @@ const AboutMe = () => {
                 >
                   저는 소위 말하는 ‘집돌이’입니다. 집에만 있어도 전혀 지루하지
                   않을 정도로 혼자서 잘 노는 타입이에요. 주로 TV를 보거나 게임을
-                  하면서 시간을 보내곤 합니다. 🎮
+                  하면서 시간을 보내곤 합니다.
                   <br /> 겨울에는 보드를 타는 걸 좋아하지만, 가격이 만만치 않아
                   자주 즐기진 못합니다.
                   <br /> 예전에 보드를 타다가 어깨를 다친 이후로는 겁이 조금
                   생겨 더 조심하게 됐어요.
-                  <br /> 그렇다고 제가 보드를 잘 탄다는 건 아니에요. 🛹
+                  <br /> 그렇다고 제가 보드를 잘 탄다는 건 아니에요.
                   <br /> 그래도 겨울만 되면 다시 생각날 만큼 좋아하는
                   취미입니다.
                 </motion.p>

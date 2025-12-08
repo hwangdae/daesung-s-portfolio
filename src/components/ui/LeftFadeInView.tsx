@@ -5,10 +5,10 @@ import { useScrollRef } from "@/hooks/scrollRef";
 interface PropType {
   as?: React.ElementType;
   children: React.ReactNode;
-  className: string;
+  className?: string;
   delay?: number;
 }
-const RightFadeInView = ({
+const LeftFadeInView = ({
   as: Component = "div",
   children,
   className,
@@ -19,10 +19,11 @@ const RightFadeInView = ({
   return (
     <motion.div
       ref={scrollRef}
-      initial={{ opacity: 0, x: 20 }}
+      style={{ display: "block" }}
+      initial={{ opacity: 0, x: -80 }}
       animate={inView && { opacity: 1, x: 0 }}
       transition={{ duration: 0.7, delay }}
-      exit={{ opacity: 0, x: 20 }}
+      exit={{ opacity: 0, x: -20 }}
       className={className}
     >
       {children}
@@ -30,4 +31,4 @@ const RightFadeInView = ({
   );
 };
 
-export default RightFadeInView;
+export default LeftFadeInView;

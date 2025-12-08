@@ -52,9 +52,15 @@ strong {
   line-height: 42px;
   letter-spacing: 0em;
 }
-
+.notFound-100-regular {
+  font-family: var(--font-blackhan);
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 100px;
+  letter-spacing: 0.02em;
+}
 /* 히어로 */
-.hero-64-regular {
+.hero-58-regular {
   font-family: var(--font-blackhan);
   font-size: 58px;
   font-weight: 500;

@@ -3,12 +3,18 @@ import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
 import Image from "next/image";
 import { SKILLITEMS, TOOLITEMS } from "@/constants/skill";
+import { AnimatePresence, motion } from "motion/react";
+import { useSkillStore } from "@/atoms/daisyState";
+import { createPortal } from "react-dom";
+import SkillModal from "./SkillModal";
 
 const Skill = () => {
+  const { skill } = useSkillStore();
+
   return (
-    <section className="relative w-full">
+    <section className="relative w-full z-50">
       <Image
-        className="relative -z-1"
+        className="relative"
         quality={100}
         src={"/images/contentsBackground.webp"}
         alt="사용 기술 백그라운드 이미지"
@@ -70,6 +76,7 @@ const Skill = () => {
           </div>
         </div>
       </div>
+      <SkillModal open={skill} />
     </section>
   );
 };

@@ -1,4 +1,3 @@
-import useAboutStore, { useEducationStore } from "@/atoms/daisyState";
 import FadeInView from "@/components/ui/FadeInView";
 import React from "react";
 
@@ -17,7 +16,6 @@ const EducationCard = ({
   position,
   index,
 }: PropsType) => {
-
   return (
     <FadeInView
       className={`flex flex-1 gap-[24px] ${
