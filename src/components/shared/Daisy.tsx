@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { motion, useAnimationControls } from "motion/react";
 import { Daisyyyy } from "@/assets";
@@ -26,7 +25,7 @@ interface PropsType {
 }
 
 const Daisy = ({ currentSection, refs }: PropsType) => {
-  const { aboutRef, skillRef, projectRef, educationRef, closingRef } = refs;
+  const { aboutRef } = refs;
 
   const { setToggleAbout } = useAboutStore();
   const { setToggleEducation } = useEducationStore();

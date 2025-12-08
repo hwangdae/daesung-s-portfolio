@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useScrollRef } from "@/hooks/scrollRef";
 
 interface PropType {

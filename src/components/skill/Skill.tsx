@@ -3,9 +3,7 @@ import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
 import Image from "next/image";
 import { SKILLITEMS, TOOLITEMS } from "@/constants/skill";
-import { AnimatePresence, motion } from "motion/react";
 import { useSkillStore } from "@/atoms/daisyState";
-import { createPortal } from "react-dom";
 import SkillModal from "./SkillModal";
 
 const Skill = () => {

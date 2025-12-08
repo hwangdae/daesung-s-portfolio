@@ -10,7 +10,7 @@ import Modal from "../ui/Modal";
 const Project = () => {
   const [openProject, setOpenProject] = useState<string[]>([]);
   const [modalProject, setModalProject] = useState<boolean>(false);
-  console.log(modalProject, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
   const toggleDetail = (title: string) => {
     setOpenProject((prev) =>
       prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
