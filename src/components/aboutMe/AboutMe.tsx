@@ -10,7 +10,7 @@ const HOBBIES = ["스노우보드", "게임"];
 
 const AboutMe = () => {
   const { about } = useAboutStore();
-  console.log(about);
+  
   return (
     <section
       className={`relative left-0 top-0 w-full h-[100vh] transition-colors duration-700 ease-in-out`}

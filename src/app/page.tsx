@@ -20,7 +20,7 @@ export default function Home() {
   const [currentSection, setCurrentSection] = useState<
     "hero" | "about" | "skill" | "project" | "education" | "closing"
   >("hero");
-  console.log(currentSection);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
