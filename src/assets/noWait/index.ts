@@ -1,4 +1,4 @@
-export { default as NowaitWaitHome } from "./nowait-waithome.png";
+export { default as NowaitWaitHome } from "./nowait-waitHome.png";
 export { default as NowaitWaitDetail } from "./nowait-waitDetail.png";
 export { default as NowaitWaitPartysize } from "./nowait-waitPartysize.png";
 export { default as NowaitWaitSummary } from "./nowait-waitSummary.png";
