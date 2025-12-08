@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import FadeInView from "../ui/FadeInView";
 import Image from "next/image";
 import useAboutStore from "@/atoms/daisyState";
@@ -10,7 +9,7 @@ const HOBBIES = ["스노우보드", "게임"];
 
 const AboutMe = () => {
   const { about } = useAboutStore();
-  
+
   return (
     <section
       className={`relative left-0 top-0 w-full h-[100vh] transition-colors duration-700 ease-in-out`}
