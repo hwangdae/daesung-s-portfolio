@@ -14,6 +14,12 @@ interface EducationStore {
   setToggleEducation: () => void;
 }
 
+interface ClosingStore {
+  closing: boolean;
+  setToggleClosing: () => void;
+  setClosingFalse: () => void;
+}
+
 export const useAboutStore = create<AboutStore>((set) => ({
   about: false,
   setToggleAbout: () => set((state) => ({ about: !state.about })),
@@ -29,4 +35,9 @@ export const useEducationStore = create<EducationStore>((set) => ({
   education: false,
   setToggleEducation: () => set((state) => ({ education: !state.education })),
 }));
-export default useAboutStore;
+
+export const useClosingStore = create<ClosingStore>((set) => ({
+  closing: false,
+  setToggleClosing: () => set((state) => ({ closing: !state.closing })),
+  setClosingFalse: () => set({ closing: false }),
+}));

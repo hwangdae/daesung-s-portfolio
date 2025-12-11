@@ -1,8 +1,7 @@
 "use client";
 import FadeInView from "../ui/FadeInView";
-import Image from "next/image";
-import useAboutStore from "@/atoms/daisyState";
 import { AnimatePresence, motion } from "motion/react";
+import { useAboutStore } from "@/atoms/daisyState";
 
 const SUBTITLES = ["사용자 경험", "신뢰감", "편의"];
 const HOBBIES = ["스노우보드", "게임"];
@@ -11,16 +10,7 @@ const AboutMe = () => {
   const { about } = useAboutStore();
 
   return (
-    <section
-      className={`relative left-0 top-0 w-full h-[100vh] transition-colors duration-700 ease-in-out`}
-    >
-      <Image
-        quality={100}
-        className="relative left-0 top-0 -z-1 object-cover object-center"
-        src={"/images/contentsBackground.webp"}
-        alt="소개 백그라운드 이미지"
-        fill
-      />
+    <section className={`relative left-0 top-0 w-full h-[100vh] bg-[#181818]`}>
       <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between">
         <FadeInView delay={0.1} className="w-[39%]">
           <AnimatePresence mode="wait">

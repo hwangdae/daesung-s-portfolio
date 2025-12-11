@@ -5,9 +5,14 @@ import { useScrollRef } from "@/hooks/scrollRef";
 import LineFadeInView from "../ui/LineFadeInView";
 import Link from "next/link";
 
-const ABOUTS = [
-  { link: "", title: "hwangdeveloper@naver.com" },
-  { link: "", title: "+82 10 2406 8022" },
+interface AboutsType {
+  link?: string;
+  title: string;
+}
+
+const ABOUTS: AboutsType[] = [
+  { title: "hwangdeveloper@naver.com" },
+  { title: "+82 10 2406 8022" },
   { link: "https://devdaybook.tistory.com/", title: "devdaybook.tistory.com" },
   { link: "https://github.com/hwangdae", title: "github.com/HwangDae" },
 ];
@@ -46,7 +51,7 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="bg-[url(/images/hero-backgroundImage.webp)] w-full h-[100vh] flex justify-center items-center relative right-0 top-0"
+      className="bg-[url(/images/background.png)] w-full h-[100vh] flex justify-center items-center relative right-0 top-0"
     >
       <div className="max-w-[1300px] h-full mx-auto flex justify-center items-center">
         <div className="flex flex-col items-start">
@@ -69,14 +74,20 @@ const Hero = () => {
           ></LineFadeInView>
           <FadeInView delay={3.2}>
             <ul className="flex gap-4">
-              {ABOUTS.map((about) => {
+              {ABOUTS.map((about: AboutsType) => {
                 return (
                   <li key={about.title}>
-                    <Link href={about.link} target="_blank">
+                    {about.link ? (
+                      <Link href={about.link} target="_blank">
+                        <p className="text-17-thin text-[#E0E0E0] mb-1">
+                          {about.title}
+                        </p>
+                      </Link>
+                    ) : (
                       <p className="text-17-thin text-[#E0E0E0] mb-1">
                         {about.title}
                       </p>
-                    </Link>
+                    )}
                   </li>
                 );
               })}

@@ -63,7 +63,7 @@ const ProjectCard = ({
           width: isOpen ? "100%" : "auto",
         }}
         className={`border-b border-[#444444] px-8 py-8 cursor-pointer flex items-center ${
-          isOpen ? "bg-[#161616]" : "bg-transparent"
+          isOpen ? "bg-[#0f0f0f]" : "bg-transparent"
         }`}
       >
         <div className="w-full flex justify-between items-start">

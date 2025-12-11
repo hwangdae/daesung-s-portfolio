@@ -5,19 +5,20 @@ import Image from "next/image";
 import { SKILLITEMS, TOOLITEMS } from "@/constants/skill";
 import { useSkillStore } from "@/atoms/daisyState";
 import SkillModal from "./SkillModal";
+import { AnimatePresence } from "motion/react";
 
 const Skill = () => {
   const { skill } = useSkillStore();
 
   return (
-    <section className="relative w-full z-50">
-      <Image
+    <section className="relative w-full z-50 bg-[#191919]">
+      {/* <Image
         className="relative"
         quality={100}
         src={"/images/contentsBackground.webp"}
         alt="사용 기술 백그라운드 이미지"
         fill
-      />
+      /> */}
       <div className="z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between flex-col items-start gap-[85px] relative left-0 top-0">
         <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[90px] bg-white"></div>

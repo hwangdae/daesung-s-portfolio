@@ -25,14 +25,14 @@ const Project = () => {
     setModalProject(false);
   };
   return (
-    <section className="relative w-full min-h-[100vh] h-[100%]">
-      <Image
+    <section className="relative w-full min-h-[100vh] h-[100%] bg-[#191919]">
+      {/* <Image
         className="relative -z-1"
         quality={100}
         src={"/images/contentsBackground.webp"}
         alt="프로젝트 백그라운드 이미지"
         fill
-      />
+      /> */}
       <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
         <FadeInView className="w-[30%]">
           <div className="flex items-center gap-4 mb-4">

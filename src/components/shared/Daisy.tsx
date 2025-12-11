@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimationControls } from "motion/react";
 import { Daisyyyy } from "@/assets";
-import useAboutStore, {
+import {
+  useAboutStore,
+  useClosingStore,
   useEducationStore,
   useSkillStore,
 } from "@/atoms/daisyState";
@@ -30,9 +32,15 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
   const { setToggleAbout } = useAboutStore();
   const { setToggleEducation } = useEducationStore();
   const { setToggleSkill, setSkillFalse } = useSkillStore();
-
+  const { setToggleClosing, setClosingFalse } = useClosingStore();
+  
   const controls = useAnimationControls();
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+
+  useEffect(() => {
+    if (currentSection !== "skill") setSkillFalse();
+    if (currentSection !== "closing") setClosingFalse();
+  }, [currentSection]);
 
   useEffect(() => {
     controls.start({
@@ -46,17 +54,14 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
     });
   }, []);
 
-
   const handleDaisy = () => {
     if (currentSection === "hero")
       aboutRef.current?.scrollIntoView({ behavior: "smooth" });
     if (currentSection === "about") setToggleAbout();
     if (currentSection === "skill") setToggleSkill();
     if (currentSection === "education") setToggleEducation();
-    if (currentSection !== "skill") setSkillFalse();
+    if (currentSection === "closing") setToggleClosing();
   };
-
-
 
   return (
     <div className="fixed right-[170px] top-[85vh] z-50">
@@ -88,7 +93,7 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
           type: "spring",
           stiffness: 300,
           damping: 18,
-          delay: 3.7,
+          delay: 3.8,
         }}
         onMouseEnter={() => setIsTooltipOpen(true)}
         onMouseLeave={() => setIsTooltipOpen(false)}
@@ -111,7 +116,7 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3.5 }}
+          transition={{ delay: 3.7 }}
         >
           <Daisyyyy />
         </motion.div>
