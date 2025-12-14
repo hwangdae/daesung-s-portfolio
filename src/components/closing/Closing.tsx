@@ -11,12 +11,6 @@ const Closing = () => {
   const { closing } = useClosingStore();
   return (
     <section className="bg-[url(/images/background.png)] w-full h-[100vh] flex justify-center items-center relative right-0 top-0">
-      {/* <Image
-        quality={100}
-        src="/images/hero-backgroundImage.webp"
-        alt="클로즈 백그라운드 이미지"
-        fill
-      /> */}
       <div className="max-w-[1300px] h-full mx-auto flex justify-center items-center">
         <div className="text-white h-full mx-auto flex justify-center">
           <div className="flex flex-col items-start">

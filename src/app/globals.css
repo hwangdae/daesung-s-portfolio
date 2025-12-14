@@ -44,6 +44,29 @@ strong {
   left: 0px;
   top: 0px;
 }
+@layer components {
+  .slider {
+    @apply appearance-none w-full h-2 rounded-full bg-gray-300;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+}
 
 .hidden-modal {
   font-family: var(--font-blackhan);
@@ -168,6 +191,12 @@ strong {
   letter-spacing: 0px;
 }
 
+.title-18-regular {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
 /* 텍스트 */
 .text-22-extraLight {
   font-size: 22px;
@@ -302,6 +331,7 @@ strong {
   letter-spacing: -0.01em;
 }
 
+
 .text-14-regular {
   font-size: 14px;
   font-weight: 400;
@@ -313,5 +343,19 @@ strong {
   font-size: 14px;
   font-weight: 300;
   line-height: 17px;
+  letter-spacing: -0.01em;
+}
+
+.text-13-light {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+}
+
+.text-12-light {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 15px;
   letter-spacing: -0.01em;
 }

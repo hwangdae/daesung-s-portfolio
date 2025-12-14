@@ -19,3 +19,6 @@ export { default as Arrow2 } from "./Arrow2.svg";
 export { default as Daisyyyy } from "./daisy.svg";
 export { default as NotFound } from "./notFound.svg";
 export { default as Game } from "./game.svg";
+export { default as Play } from "./play.png";
+export { default as Pause } from "./pause.png";
+

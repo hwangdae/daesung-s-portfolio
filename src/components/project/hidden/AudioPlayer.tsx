@@ -1,0 +1,183 @@
+"use client";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import AudioControls from "./AudioControls";
+import { TRACKS } from "./tracks";
+
+function formatTime(time: number) {
+  if (isNaN(time)) return "0:00";
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60)
+    .toString()
+    .padStart(2, "0");
+  return `${minutes}:${seconds}`;
+}
+
+const AudioPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [volume, setVolume] = useState(0.5);
+  const { title, artist, src, cover } = TRACKS[trackIndex];
+
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const sliderRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    const audio = new Audio(src);
+    audio.volume = volume;
+    audioRef.current = audio;
+
+    const handleTimeUpdate = () => {
+      setCurrentTime(audio.currentTime);
+    };
+
+    const handleLoadedMetadata = () => {
+      setDuration(audio.duration);
+    };
+    const handleVolume = () => {
+      setVolume(audio.volume);
+    };
+    const handleEnded = () => {
+      toNextTrack();
+    };
+
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("volumechange", handleVolume);
+    if (isPlaying) {
+      audio.play();
+    }
+
+    return () => {
+      audio.pause();
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audio.removeEventListener("ended", handleEnded);
+    };
+  }, [src]);
+
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
+
+  const onScrub = (value: number) => {
+    if (!audioRef.current) return;
+
+    audioRef.current.currentTime = value;
+    setCurrentTime(value);
+  };
+
+  const onVolume = (value: number) => {
+    if (!audioRef.current) return;
+
+    audioRef.current.volume = value;
+    setVolume(value);
+  };
+
+  const onScrubEnd = () => {
+    if (!isPlaying) {
+      setIsPlaying(true);
+    }
+  };
+
+  const toPrevTrack = () => {
+    setCurrentTime(0);
+    setDuration(0);
+
+    setTrackIndex((prev) => (prev - 1 < 0 ? TRACKS.length - 1 : prev - 1));
+  };
+
+  const toNextTrack = () => {
+    setCurrentTime(0);
+    setDuration(0);
+
+    setTrackIndex((prev) => (prev < TRACKS.length - 1 ? prev + 1 : 0));
+  };
+
+  return (
+    <div className="fixed z-50">
+      <div className="fixed left-[25px] bottom-[25px] z-50 bg-[#22222b] rounded-md p-4">
+        <Image width={220} height={220} src={cover} alt="앨범 이미지" />
+
+        <div className="my-4">
+          <h1 className="title-18-regular mb-1">{title}</h1>
+          <h2 className="text-13-light">{artist}</h2>
+        </div>
+
+        {/* 가사 */}
+        <div
+          className={`w-[220px] max-h-[240px] text-center mt-6 mb-3 overflow-y-scroll overscroll-contain [&::-webkit-scrollbar]:hidden`}
+        >
+          <div className="relative ">
+            <p
+              className={`
+              text-16-light text-[#e7e7e7] !leading-6 break-keep
+              // ${expanded ? "" : "line-clamp-2"}
+            `}
+            >
+              저는 프로젝트를 할 때 보통 음악을 들으면서 작업해요.
+              <br />
+              장르는 크게 가리지 않지만, 프로젝트를 진행 했을 때에는 잔잔한
+              음악을 많이 들었던거 같아요. 음악을 들으면 집중이 더 잘 되는지는
+              모르겠지만, 좋은 음악이 함께하면 작업 시간이 조금은 더 즐거워지는
+              것 같아요. 여기에 넣은 곡들은 모두 저작권이 없는 음악들이고,
+              평소에 자주 듣던 분위기의 곡들로 골라봤습니다. 생각보다 좋은 곡
+              찾기가 쉽지 않더라고요. 가볍게 들어주세요 🌼
+            </p>
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="w-full text-14-light bg-gradient-to-t from-[#22222b] to-transparent underline text-[rgb(107,132,243)]"
+            >
+              {expanded ? "가사 접기" : "가사 보기"}
+            </button>
+          </div>
+        </div>
+
+        {/* 슬라이더 */}
+        <input
+          ref={sliderRef}
+          type="range"
+          min={0}
+          max={duration}
+          value={currentTime}
+          onChange={(e) => onScrub(Number(e.target.value))}
+          onMouseUp={onScrubEnd}
+          onKeyUp={onScrubEnd}
+          disabled={duration === 0}
+          className="w-full appearance-none h-1.5 rounded-full slider"
+          style={{
+            background: `linear-gradient(to right, #ffffff ${
+              duration ? (currentTime / duration) * 100 : 0
+            }%, #4a4a4a 0)`,
+          }}
+        />
+        {/* 시간 */}
+        <div className="flex justify-between">
+          <p className="text-12-light">{formatTime(currentTime)}</p>
+          <p className="text-12-light">{formatTime(duration)}</p>
+        </div>
+
+        <AudioControls
+          isPlaying={isPlaying}
+          onPlayPauseClick={setIsPlaying}
+          onPrevClick={toPrevTrack}
+          onNextClick={toNextTrack}
+          volume={volume}
+          onVolume={onVolume}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default React.memo(AudioPlayer);

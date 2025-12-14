@@ -4,8 +4,8 @@ import { AnimatePresence } from "motion/react";
 import ProjectCard from "./components/ProjectCard";
 import { ProjectType } from "@/types/ProjectType";
 import FadeInView from "../ui/FadeInView";
-import Image from "next/image";
 import Modal from "../ui/Modal";
+import AudioPlayer from "./hidden/AudioPlayer";
 
 const Project = () => {
   const [openProject, setOpenProject] = useState<string[]>([]);
@@ -24,15 +24,9 @@ const Project = () => {
   const closeModal = () => {
     setModalProject(false);
   };
+
   return (
     <section className="relative w-full min-h-[100vh] h-[100%] bg-[#191919]">
-      {/* <Image
-        className="relative -z-1"
-        quality={100}
-        src={"/images/contentsBackground.webp"}
-        alt="프로젝트 백그라운드 이미지"
-        fill
-      /> */}
       <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
         <FadeInView className="w-[30%]">
           <div className="flex items-center gap-4 mb-4">
@@ -63,9 +57,9 @@ const Project = () => {
             })}
           </AnimatePresence>
         </ul>
-          <Modal open={modalProject} onClose={closeModal}/>
-
+        <Modal open={modalProject} onClose={closeModal} />
       </div>
+      <AudioPlayer />
     </section>
   );
 };

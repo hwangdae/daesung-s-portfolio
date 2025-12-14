@@ -1,8 +1,6 @@
-import React from "react";
 import EducationCard from "./components/EducationCard";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
-import Image from "next/image";
 import { useEducationStore } from "@/atoms/daisyState";
 import RightFadeInView from "../ui/RightFadeInView";
 import { AnimatePresence } from "motion/react";
@@ -19,16 +17,6 @@ const EDUCATIONS = [
       "디자이너와의 협업을 통해 UI/UX 시안을 구현",
     ],
   },
-  // {
-  //   id: "crossDesign",
-  //   title: "크로스디자인그룹주식회사",
-  //   period: "2022.07.25 - 2023.04.15",
-  //   contents: [
-  //     "워드프레스를 활용한 홈페이지 제작 및 유지보수",
-  //     "Photoshop을 활용해 간단한 이미지 편집",
-  //     "Media Query를 활용한 반응형 웹 구현",
-  //   ],
-  // },
   {
     id: "uiux",
     title: "UI/UX 반응형 웹디자인&웹퍼블리셔",
@@ -57,13 +45,6 @@ const Education = () => {
 
   return (
     <section className="relative right-0 top-0 w-full bg-[#191919]">
-      {/* <Image
-        className="relative -z-1"
-        quality={100}
-        src={"/images/contentsBackground.webp"}
-        alt="교육내용 백그라운드 이미지"
-        fill
-      /> */}
       <div className="relative z-40 max-w-[1300px] h-full mx-auto flex justify-between items-start py-[12vh]">
         <FadeInView className="w-[30%] flex items-center gap-4">
           <div className="w-[8px] h-[46px] bg-white" />
