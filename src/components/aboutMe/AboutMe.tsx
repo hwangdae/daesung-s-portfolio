@@ -1,7 +1,7 @@
 "use client";
 import FadeInView from "../ui/FadeInView";
 import { AnimatePresence, motion } from "motion/react";
-import { useAboutStore } from "@/atoms/daisyState";
+import { useAboutStore } from "@/stores/daisyStore";
 
 const SUBTITLES = ["사용자 경험", "신뢰감", "편의"];
 const HOBBIES = ["스노우보드", "게임"];

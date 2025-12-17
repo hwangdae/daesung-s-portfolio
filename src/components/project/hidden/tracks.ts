@@ -3,18 +3,18 @@ export const TRACKS = [
     title: "悲しい夢",
     artist: "TAVC City Pop",
     src: "/images/audio/cityPop.mp3",
-    cover: "/images/audio/cityPop.jpg",
+    cover: "/images/audio/cityPop2.jpg",
   },
   {
     title: "compass",
     artist: "SoulProdMusic",
     src: "/images/audio/compass.mp3",
-    cover: "/images/audio/compass.jpg",
+    cover: "/images/audio/compass2.jpg",
   },
   {
     title: "splitMemmories",
     artist: "IdoBerg",
     src: "/images/audio/splitMemmories.mp3",
-    cover: "/images/audio/splitMemmories.webp",
+    cover: "/images/audio/splitMemmories2.jpg",
   },
 ];

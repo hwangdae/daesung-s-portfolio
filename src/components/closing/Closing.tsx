@@ -2,7 +2,7 @@
 import Link from "next/link";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
-import { useClosingStore } from "@/atoms/daisyState";
+import { useClosingStore } from "@/stores/daisyStore";
 import { Blog, Github } from "@/assets";
 import RightFadeInView from "../ui/RightFadeInView";
 import { AnimatePresence } from "motion/react";

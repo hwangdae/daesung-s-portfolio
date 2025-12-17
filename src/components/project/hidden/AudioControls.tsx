@@ -1,8 +1,8 @@
 import React from "react";
-import { FaCirclePause } from "react-icons/fa6";
-import { FaCirclePlay } from "react-icons/fa6";
-import { BiSkipPrevious } from "react-icons/bi";
-import { BiSkipNext } from "react-icons/bi";
+import { FaPause } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa6";
+import { TbPlayerTrackPrevFilled } from "react-icons/tb";
+import { TbPlayerTrackNextFilled } from "react-icons/tb";
 interface PropsType {
   isPlaying: boolean;
   onPlayPauseClick: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,21 +21,21 @@ const AudioControls = ({
   onVolume,
 }: PropsType) => {
   return (
-    <div className="flex justify-center gap-1 mt-3 relative">
+    <div className="flex justify-center gap-3 mt-3 relative">
       <button onClick={onPrevClick} aria-label="prev">
-        <BiSkipPrevious size={34} />
+        <TbPlayerTrackPrevFilled size={22} />
       </button>
       {isPlaying ? (
         <button onClick={() => onPlayPauseClick(false)} aria-label="Pause">
-          <FaCirclePause size={34} />
+          <FaPause size={32} />
         </button>
       ) : (
         <button onClick={() => onPlayPauseClick(true)} aria-label="Play">
-          <FaCirclePlay size={34} />
+          <FaPlay size={32} />
         </button>
       )}
       <button onClick={onNextClick} aria-label="next">
-        <BiSkipNext size={34} />
+        <TbPlayerTrackNextFilled size={22} />
       </button>
       <input
         type="range"

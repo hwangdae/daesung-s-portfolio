@@ -79,7 +79,7 @@ export default function Home() {
       </div>
 
       <div id="project" ref={projectRef}>
-        <Project />
+        <Project currentSection={currentSection} />
       </div>
 
       <div id="education" ref={educationRef}>

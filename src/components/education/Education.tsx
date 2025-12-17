@@ -1,7 +1,7 @@
 import EducationCard from "./components/EducationCard";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
-import { useEducationStore } from "@/atoms/daisyState";
+import { useEducationStore } from "@/stores/daisyStore";
 import RightFadeInView from "../ui/RightFadeInView";
 import { AnimatePresence } from "motion/react";
 

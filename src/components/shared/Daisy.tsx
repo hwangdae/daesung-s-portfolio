@@ -4,10 +4,12 @@ import { motion, useAnimationControls } from "motion/react";
 import { Daisyyyy } from "@/assets";
 import {
   useAboutStore,
+  useAudioUIStore,
   useClosingStore,
   useEducationStore,
+  useProjectStore,
   useSkillStore,
-} from "@/atoms/daisyState";
+} from "@/stores/daisyStore";
 
 interface PropsType {
   currentSection:
@@ -32,14 +34,21 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
   const { setToggleAbout } = useAboutStore();
   const { setToggleEducation } = useEducationStore();
   const { setToggleSkill, setSkillFalse } = useSkillStore();
+  const { setToggleProject, setProjectFalse } = useProjectStore();
+  const { openFull, switchToMini, halfHide, view } = useAudioUIStore();
   const { setToggleClosing, setClosingFalse } = useClosingStore();
-  
+
   const controls = useAnimationControls();
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
 
   useEffect(() => {
     if (currentSection !== "skill") setSkillFalse();
     if (currentSection !== "closing") setClosingFalse();
+    if (view === "mini" || view === "halfHidden") {
+      return;
+    } else {
+      switchToMini();
+    }
   }, [currentSection]);
 
   useEffect(() => {
@@ -59,6 +68,11 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
       aboutRef.current?.scrollIntoView({ behavior: "smooth" });
     if (currentSection === "about") setToggleAbout();
     if (currentSection === "skill") setToggleSkill();
+    if (currentSection === "project" && view !== "full") {
+      openFull();
+    } else if (currentSection === "project" && view === "full") {
+      halfHide();
+    }
     if (currentSection === "education") setToggleEducation();
     if (currentSection === "closing") setToggleClosing();
   };

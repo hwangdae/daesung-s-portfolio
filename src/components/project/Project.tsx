@@ -5,11 +5,17 @@ import ProjectCard from "./components/ProjectCard";
 import { ProjectType } from "@/types/ProjectType";
 import FadeInView from "../ui/FadeInView";
 import Modal from "../ui/Modal";
+import FullAudioPlayer from "./hidden/FullAudioPlayer";
+import { useAudioUIStore, useProjectStore } from "@/stores/daisyStore";
+import MiniAudioPlayer from "./hidden/MiniAudioPlayer";
+import { a } from "motion/react-client";
 import AudioPlayer from "./hidden/AudioPlayer";
 
-const Project = () => {
+const Project = ({ currentSection }: { currentSection: string }) => {
   const [openProject, setOpenProject] = useState<string[]>([]);
   const [modalProject, setModalProject] = useState<boolean>(false);
+  const { view } = useAudioUIStore();
+  const { project } = useProjectStore();
 
   const toggleDetail = (title: string) => {
     setOpenProject((prev) =>
@@ -59,7 +65,11 @@ const Project = () => {
         </ul>
         <Modal open={modalProject} onClose={closeModal} />
       </div>
-      <AudioPlayer />
+      <AnimatePresence>
+        {/* {view === "full" && <FullAudioPlayer />}
+        {view === "mini" && <MiniAudioPlayer />} */}
+        <AudioPlayer />
+      </AnimatePresence>
     </section>
   );
 };

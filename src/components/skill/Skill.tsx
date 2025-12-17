@@ -2,7 +2,7 @@ import React from "react";
 import FadeInView from "../ui/FadeInView";
 import LineFadeInView from "../ui/LineFadeInView";
 import { SKILLITEMS, TOOLITEMS } from "@/constants/skill";
-import { useSkillStore } from "@/atoms/daisyState";
+import { useSkillStore } from "@/stores/daisyStore";
 import SkillModal from "./SkillModal";
 
 const Skill = () => {

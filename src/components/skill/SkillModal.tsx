@@ -2,11 +2,11 @@
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { useSkillStore } from "@/atoms/daisyState";
+import { useSkillStore } from "@/stores/daisyStore";
 
 export default function SkillModal({ open }: { open: boolean }) {
   const [mounted, setMounted] = useState(false);
-  const { skill, setSkillFalse } = useSkillStore();
+  const { setSkillFalse } = useSkillStore();
 
   useEffect(() => {
     setMounted(true);
