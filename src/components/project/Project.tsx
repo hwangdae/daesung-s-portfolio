@@ -32,7 +32,7 @@ const Project = ({ currentSection }: { currentSection: string }) => {
   };
 
   return (
-    <section className="relative w-full min-h-[100vh] h-[100%] bg-[#191919]">
+    <section className="relative w-full min-h-[100vh] h-[100%] bg-[#181818]">
       <div className="relative z-50 max-w-[1300px] h-full mx-auto py-[12vh] flex justify-between items-start gap-[85px]">
         <FadeInView className="w-[30%]">
           <div className="flex items-center gap-4 mb-4">
@@ -66,8 +66,6 @@ const Project = ({ currentSection }: { currentSection: string }) => {
         <Modal open={modalProject} onClose={closeModal} />
       </div>
       <AnimatePresence>
-        {/* {view === "full" && <FullAudioPlayer />}
-        {view === "mini" && <MiniAudioPlayer />} */}
         <AudioPlayer />
       </AnimatePresence>
     </section>

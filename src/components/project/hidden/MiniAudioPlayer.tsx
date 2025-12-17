@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import AudioControls from "./AudioControls";
-import { formatTime } from "@/utils/formatTime";
 import { useAudioUIStore } from "@/stores/daisyStore";
 import { TRACKS } from "./tracks";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useAudioStore } from "@/stores/audioStore";
+import AudioProgressBar from "./AudioProgressBar";
 
 const MiniAudioPlayer = () => {
   const { view, switchToMini, halfHide } = useAudioUIStore();
@@ -26,9 +26,9 @@ const MiniAudioPlayer = () => {
 
   return (
     <motion.div
-      className="fixed left-[25px] bottom-[25px] z-50"
+      className="fixed left-[15px] bottom-[25px] z-50"
       initial={{ x: -100 }}
-      animate={{ x: view === "halfHidden" ? -290 : 0 }}
+      animate={{ x: view === "halfHidden" ? -285 : 0 }}
       exit={{ x: -100 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
@@ -50,28 +50,11 @@ const MiniAudioPlayer = () => {
             </div>
           </div>
           {/* 플레이 바 */}
-          <div className="flex items-center gap-1.5">
-            <p className="text-11-light !tracking-[0.01em]">
-              {formatTime(currentTime)}
-            </p>
-            <input
-              type="range"
-              min={0}
-              max={duration}
-              value={currentTime}
-              onChange={(e) => scrub(Number(e.target.value))}
-              disabled={duration === 0}
-              className="w-full appearance-none h-1.5 rounded-full slider"
-              style={{
-                background: `linear-gradient(to right, #ffffff ${
-                  duration ? (currentTime / duration) * 100 : 0
-                }%, #4a4a4a 0)`,
-              }}
-            />
-            <p className="text-11-light !tracking-[0.01em]">
-              {formatTime(duration)}
-            </p>
-          </div>
+          <AudioProgressBar
+            currentTime={currentTime}
+            duration={duration}
+            scrub={scrub}
+          />
           {/* 오디오 컨트롤 */}
           <AudioControls
             isPlaying={isPlaying}
@@ -88,7 +71,7 @@ const MiniAudioPlayer = () => {
               halfHide();
             } else switchToMini();
           }}
-          className="flex items-center justify-center bg-[#22222b] rounded-md"
+          className="flex items-center justify-center bg-[#1c1c1d] rounded-md"
         >
           <MdKeyboardArrowLeft
             size={18}

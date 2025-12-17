@@ -1,17 +1,14 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import AudioControls from "./AudioControls";
 import { motion } from "motion/react";
-import { formatTime } from "@/utils/formatTime";
 import { TRACKS } from "./tracks";
 import { useAudioStore } from "@/stores/audioStore";
+import AudioProgressBar from "./AudioProgressBar";
 
 const FullAudioPlayer = () => {
   const [expanded, setExpanded] = useState(false);
-
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const sliderRef = useRef<HTMLInputElement | null>(null);
 
   const {
     trackIndex,
@@ -31,7 +28,7 @@ const FullAudioPlayer = () => {
   return (
     <div className="fixed z-50">
       <motion.div
-        className="fixed left-[25px] bottom-[25px] z-50 bg-[#22222b] rounded-md p-4"
+        className="fixed left-[15px] bottom-[25px] z-50 bg-[#22222b] rounded-md p-4"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
@@ -78,35 +75,13 @@ const FullAudioPlayer = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-1.5">
-          <p className="text-11-light !tracking-[0.01em]">
-            {formatTime(currentTime)}
-          </p>
-          {/* 슬라이더 */}
-          <input
-            ref={sliderRef}
-            type="range"
-            min={0}
-            max={duration}
-            value={currentTime}
-            onChange={(e) => scrub(Number(e.target.value))}
-            // onMouseUp={onScrubEnd}
-            // onKeyUp={onScrubEnd}
-            disabled={duration === 0}
-            className="w-full appearance-none h-1.5 rounded-full slider"
-            style={{
-              background: `linear-gradient(to right, #ffffff ${
-                duration ? (currentTime / duration) * 100 : 0
-              }%, #4a4a4a 0)`,
-            }}
-          />
-          {/* 시간 */}
-
-          <p className="text-11-light !tracking-[0.01em]">
-            {formatTime(duration)}
-          </p>
-        </div>
-
+        {/* 프로그래스 바 */}
+        <AudioProgressBar
+          currentTime={currentTime}
+          duration={duration}
+          scrub={scrub}
+        />
+        {/* 오디오 컨트롤 */}
         <AudioControls
           isPlaying={isPlaying}
           onPlayPauseClick={toggle}

@@ -7,7 +7,6 @@ import {
   useAudioUIStore,
   useClosingStore,
   useEducationStore,
-  useProjectStore,
   useSkillStore,
 } from "@/stores/daisyStore";
 
@@ -34,7 +33,6 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
   const { setToggleAbout } = useAboutStore();
   const { setToggleEducation } = useEducationStore();
   const { setToggleSkill, setSkillFalse } = useSkillStore();
-  const { setToggleProject, setProjectFalse } = useProjectStore();
   const { openFull, switchToMini, halfHide, view } = useAudioUIStore();
   const { setToggleClosing, setClosingFalse } = useClosingStore();
 
@@ -44,7 +42,7 @@ const Daisy = ({ currentSection, refs }: PropsType) => {
   useEffect(() => {
     if (currentSection !== "skill") setSkillFalse();
     if (currentSection !== "closing") setClosingFalse();
-    if (view === "mini" || view === "halfHidden") {
+    if (view !== "full") {
       return;
     } else {
       switchToMini();
